@@ -24,4 +24,5 @@ jobs:
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ONAH_S_PORTFOLIO }}'
+          channelId: live
           projectId: onah-s-portfolio
