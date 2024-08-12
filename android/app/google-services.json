@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "765986511047",
+    "project_id": "onah-s-portfolio",
+    "storage_bucket": "onah-s-portfolio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765986511047:android:d9f4174d65fe741d5f46e2",
+        "android_client_info": {
+          "package_name": "com.csonah.onah_portfolio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTuwe0oqQ4IcXeN3D7UZn2k7IOapEycIE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
