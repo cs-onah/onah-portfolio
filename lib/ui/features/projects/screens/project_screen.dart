@@ -6,7 +6,7 @@ class ProjectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text("Project"),
+      body: Text("Projects"),
     );
   }
 }

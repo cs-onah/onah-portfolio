@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onah_portfolio/core/config/routes.dart';
+import 'package:onah_portfolio/core/config/route_config.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: "Onah's Portfolio",
       routerConfig: appRouter,
-
+      debugShowCheckedModeBanner: false,
     );
   }
 }
