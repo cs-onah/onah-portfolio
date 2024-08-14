@@ -9,7 +9,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Row(),
           const Text("Home - WIP"),
           const SizedBox(height: 10),
           ElevatedButton(
