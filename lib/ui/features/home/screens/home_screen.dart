@@ -59,25 +59,39 @@ class FrontPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     TextButton(
-                        onPressed: () {}, child: const Text("My Project")),
-                    TextButton(onPressed: () {}, child: const Text("Tools")),
-                    TextButton(onPressed: () {}, child: const Text("Blog")),
-                    TextButton(onPressed: () {}, child: const Text("Resume")),
+                      onPressed: () {},
+                      child: const Text("My Project"),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text("Tools"),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text("Blog"),
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text("Resume"),
+                    ),
                   ],
                 ),
                 const Spacer(),
                 ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: AppFont.cormorantInfant,
-                    ),
+                    padding: EdgeInsets.all(18),
                   ),
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("HIRE ME"),
+                      Text(
+                        "HIRE ME",
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontFamily: AppFont.cormorantInfant,
+                        ),
+                      ),
                       SizedBox(width: 25),
                       SvgRenderWidget(svgPath: SvgPath.arrowRight),
                     ],
