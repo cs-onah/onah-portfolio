@@ -17,7 +17,7 @@ dependencies:
   firebase_core: ^3.3.0
   cached_network_image: ^3.2.3
   flutter_svg: ^1.1.6
-  typethis: ^1.0.3
+  animated_text_kit: ^4.2.3
 
 dev_dependencies:
   flutter_test:

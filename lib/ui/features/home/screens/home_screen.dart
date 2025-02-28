@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
@@ -58,7 +59,8 @@ class FrontPage extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    TextButton(onPressed: () {}, child: const Text("My Project")),
+                    TextButton(
+                        onPressed: () {}, child: const Text("My Project")),
                     TextButton(onPressed: () {}, child: const Text("Tools")),
                     TextButton(onPressed: () {}, child: const Text("Blog")),
                     TextButton(onPressed: () {}, child: const Text("Resume")),
@@ -127,34 +129,19 @@ class FrontPage extends StatelessWidget {
   }
 }
 
-class TitleWidget extends StatefulWidget {
+class TitleWidget extends StatelessWidget {
   const TitleWidget({super.key});
   @override
-  State<TitleWidget> createState() => _TitleWidgetState();
-}
-
-class _TitleWidgetState extends State<TitleWidget> {
-  final controller = TypeThisController();
-
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_){
-      controller.reset();
-      controller.addListener((){
-        print("******");
-        print(controller.state);
-      });
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return TypeThis(
-      controller: controller,
-      string: "Mobile Software Developer",
-      style: context.textTheme.displayMedium,
+    final speed = const Duration(milliseconds: 100);
+    return DefaultTextStyle(
+      style: context.textTheme.displayMedium!,
+      child: AnimatedTextKit(
+        animatedTexts: [
+          TypewriterAnimatedText('Mobile Software Developer', speed: speed),
+          TypewriterAnimatedText('IT Project Manager', speed: speed),
+        ],
+      ),
     );
   }
 }
-
