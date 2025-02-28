@@ -8,6 +8,7 @@ import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 import 'package:onah_portfolio/ui/themes/theme.dart';
+import 'package:typethis/typethis.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -92,10 +93,7 @@ class FrontPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Mobile Software Developer",
-                        style: context.textTheme.displayMedium,
-                      ),
+                      TitleWidget(),
                       const SizedBox(height: 27),
                       Text(
                         "Hi! I’m Ebuka, a Mobile Developer based in Nigeria. I create user-friendly interfaces for fast-growing startups.",
@@ -128,3 +126,35 @@ class FrontPage extends StatelessWidget {
     );
   }
 }
+
+class TitleWidget extends StatefulWidget {
+  const TitleWidget({super.key});
+  @override
+  State<TitleWidget> createState() => _TitleWidgetState();
+}
+
+class _TitleWidgetState extends State<TitleWidget> {
+  final controller = TypeThisController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_){
+      controller.reset();
+      controller.addListener((){
+        print("******");
+        print(controller.state);
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TypeThis(
+      controller: controller,
+      string: "Mobile Software Developer",
+      style: context.textTheme.displayMedium,
+    );
+  }
+}
+
