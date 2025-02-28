@@ -46,12 +46,13 @@ ThemeData buildDarkTheme(ScreenType type) {
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         elevation: 0,
-        minimumSize: const Size(double.infinity, 56),
+        minimumSize: const Size(0, 56),
         backgroundColor: AppColors.primaryColor,
+        foregroundColor: AppColors.black,
         textStyle: const TextStyle(
-          color: AppColors.white,
           fontSize: 24,
           fontWeight: FontWeight.w500,
+          fontFamily: AppFont.cormorantInfant,
         ),
       ),
     ),

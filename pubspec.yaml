@@ -15,6 +15,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   go_router: ^14.2.3
   firebase_core: ^3.3.0
+  cached_network_image: ^3.2.3
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -25,8 +27,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images
-    - assets/svgs
+    - assets/images/
+    - assets/svgs/
 
   fonts:
     - family: Michroma
@@ -34,13 +36,13 @@ flutter:
         - asset: assets/fonts/Michroma-Regular.ttf
     - family: CormorantInfant
       fonts:
-        - asset: assets/fonts/CormorantInfant-Bold.otf
+        - asset: assets/fonts/CormorantInfant-Bold.ttf
           weight: 700
-        - asset: assets/fonts/CormorantInfant-SemiBold.otf
+        - asset: assets/fonts/CormorantInfant-SemiBold.ttf
           weight: 600
-        - asset: assets/fonts/CormorantInfant-Medium.otf
+        - asset: assets/fonts/CormorantInfant-Medium.ttf
           weight: 500
-        - asset: assets/fonts/CormorantInfant-Regular.otf
+        - asset: assets/fonts/CormorantInfant-Regular.ttf
           weight: 300
-        - asset: assets/fonts/CormorantInfant-Light.otf
+        - asset: assets/fonts/CormorantInfant-Light.ttf
           weight: 200
