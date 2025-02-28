@@ -9,7 +9,6 @@ import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 import 'package:onah_portfolio/ui/themes/theme.dart';
-import 'package:typethis/typethis.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
