@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onah_portfolio/core/constants/route_names.dart';
+import 'package:onah_portfolio/ui/features/home/screens/front_page.dart';
+import 'package:onah_portfolio/ui/features/home/screens/project_page.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -8,10 +10,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
         children: [
-          const Row(),
+          const FrontPage(),
+          const ProjectPage(),
           const Text("Home - WIP"),
           const SizedBox(height: 10),
           ElevatedButton(
@@ -23,3 +25,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
