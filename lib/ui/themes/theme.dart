@@ -61,8 +61,9 @@ ThemeData buildDarkTheme(ScreenType type) {
         foregroundColor: AppColors.white,
         textStyle: const TextStyle(
           color: AppColors.white,
-          fontSize: 14,
+          fontSize: 26,
           fontWeight: FontWeight.w700,
+          fontFamily: AppFont.cormorantInfant,
         ),
       ),
     ),

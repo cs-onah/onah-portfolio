@@ -493,6 +493,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  typethis:
+    dependency: "direct main"
+    description:
+      name: typethis
+      sha256: faeb206f5fc3159f3b177ebe0b298aafc5845d8fd3b2f7f9ef34699176adc090
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.3"
   uuid:
     dependency: transitive
     description:
