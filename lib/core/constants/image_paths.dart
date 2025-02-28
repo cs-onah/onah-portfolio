@@ -3,4 +3,7 @@ class ImagePath {
   static const logo = "$basePath/logo.png";
   static const homeBg = "$basePath/home_bg.png";
   static const avatar = "$basePath/avatar.png";
+  static const caryLogo = "$basePath/cary_logo.png";
+  static const iservLogo = "$basePath/iserv_logo.png";
+  static const evenfareLogo = "$basePath/evenfare.png";
 }

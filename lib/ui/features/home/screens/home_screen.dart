@@ -14,12 +14,11 @@ class HomeScreen extends StatelessWidget {
         children: [
           const FrontPage(),
           const ProjectPage(),
-          const Text("Home - WIP"),
           const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () => context.go(RouteNames.projects),
-            child: const Text("Projects"),
-          ),
+          // ElevatedButton(
+          //   onPressed: () => context.go(RouteNames.projects),
+          //   child: const Text("Projects"),
+          // ),
         ],
       ),
     );
