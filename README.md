@@ -7,12 +7,12 @@ Online Portfolio for Chukwuebuka Onah. My own personal playground for flutter we
 ### Desktop View
 
 <img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/desktop1.png" alt="Loading photo" loading="eager">
-<img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/desktop2.png" alt="Loading demo..." loading="eager">
+<img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/desktop2.png" alt="Loading photo" loading="eager">
 
 ### Mobile View
 
 <img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/mobile1.png" alt="Loading photo" loading="eager">
-<img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/mobile2.png" alt="Loading demo..." loading="eager">
+<img height="567" src="https://github.com/cs-onah/onah-portfolio/blob/main/docs/mobile2.png" alt="Loading photo" loading="eager">
 
 ## Getting Started
 
