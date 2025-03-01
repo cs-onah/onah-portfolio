@@ -122,7 +122,7 @@ class _ProjectCardState extends State<ProjectCard> {
       onEnter: (_) => setState(() => _isHovered = true),
       onExit: (_) => setState(() => _isHovered = false),
       child: SizedBox(
-        height: projectListWidgetHeight,
+        height: context.screenType.isDesktop ? projectListWidgetHeight : null,
         width: 390,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,17 +157,69 @@ class _ProjectCardState extends State<ProjectCard> {
               ],
             ),
             const SizedBox(height: 10),
-            Text(
-              project.description ?? "",
-              style: context.textTheme.bodyMedium?.copyWith(
-                color: context.colors.outlineColor,
+            if (_isHovered && context.screenType.isDesktop) ...[
+              projectActions(),
+            ] else ...[
+              Text(
+                project.description ?? "",
+                style: context.textTheme.bodyMedium?.copyWith(
+                  color: context.colors.outlineColor,
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            const SvgRenderWidget(svgPath: SvgPath.allPlatforms),
+              const SizedBox(height: 10),
+              const SvgRenderWidget(svgPath: SvgPath.allPlatforms),
+            ],
+            if (context.screenType.isMobile) ...[
+              const SizedBox(height: 8),
+              projectActions(),
+            ]
           ],
         ),
       ),
+    );
+  }
+
+  Widget projectActions() {
+    final size = context.screenType.isMobile ? Size(double.infinity, 43) : null;
+    return Row(
+      children: [
+        Expanded(
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(minimumSize: size),
+            child: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SvgRenderWidget(svgPath: SvgPath.apple),
+                SizedBox(width: 10),
+                Text("App Store"),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(width: 10),
+        Expanded(
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              side: BorderSide(color: context.colors.white),
+              minimumSize: size,
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const SvgRenderWidget(svgPath: SvgPath.playstore),
+                const SizedBox(width: 10),
+                Text(
+                  "PlayStore",
+                  style: TextStyle(color: context.colors.white),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
