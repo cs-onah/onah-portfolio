@@ -143,6 +143,7 @@ class _FormWidgetState extends State<FormWidget> with Validators {
           "\n Message: ${message.text}";
       await EmailService.sendMessage(fullMessage);
       context.showSuccessSnackBar("Message sent successfully");
+      formKey.currentState?.reset();
     } catch (error) {
       context.showErrorSnackBar(error);
     } finally {
