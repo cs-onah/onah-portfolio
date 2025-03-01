@@ -16,6 +16,7 @@ class MobileFooter extends StatelessWidget {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
+            const Row(),
             const Row(
               mainAxisSize: MainAxisSize.min,
               children: [

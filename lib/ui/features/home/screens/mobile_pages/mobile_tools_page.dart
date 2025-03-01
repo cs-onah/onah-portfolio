@@ -3,6 +3,7 @@ import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
+import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
@@ -16,7 +17,10 @@ class MobileToolsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage(ImagePath.toolsBg), alignment: Alignment.topCenter),
+        image: DecorationImage(
+          image: AssetImage(ImagePath.toolsBg),
+          alignment: Alignment.topCenter,
+        ),
       ),
       child: LayoutConstraint(
         child: Column(
@@ -24,7 +28,10 @@ class MobileToolsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const SvgRenderWidget(svgPath: SvgPath.toolsHeader),
+            SvgRenderWidget(
+              svgPath: SvgPath.toolsHeader,
+              key: HeaderKey.toolPage,
+            ),
             const SizedBox(height: 30),
             Flexible(
               child: ImageRenderWidget.asset(

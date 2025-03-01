@@ -4,6 +4,7 @@ import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/core/utils/validators.dart';
 import 'package:onah_portfolio/ui/features/home/screens/mobile_pages/mobile_form_page.dart';
+import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/app_elevated_button.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
@@ -23,9 +24,13 @@ class FormPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          const SvgRenderWidget(svgPath: SvgPath.formHeader),
+          SvgRenderWidget(
+            svgPath: SvgPath.formHeader,
+            key: HeaderKey.formPage,
+          ),
           const SizedBox(height: 19),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               /// Form
               const Expanded(child: FormWidget()),

@@ -4,6 +4,7 @@ import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/screens/mobile_pages/mobile_tools_page.dart';
+import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
@@ -18,13 +19,17 @@ class ToolsPage extends StatelessWidget {
     if (context.screenType.isMobile) return const MobileToolsPage();
     return Container(
       decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage(ImagePath.toolsBg))),
+        image: DecorationImage(image: AssetImage(ImagePath.toolsBg)),
+      ),
       child: LayoutConstraint(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const SvgRenderWidget(svgPath: SvgPath.toolsHeader),
+            SvgRenderWidget(
+              svgPath: SvgPath.toolsHeader,
+              key: HeaderKey.toolPage,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -89,7 +94,7 @@ class ToolsPage extends StatelessWidget {
                         ),
                         child: const ArrowText(
                           child: Text(
-                            "DOWNLOAD RESUME",
+                            "SEE RESUME",
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),

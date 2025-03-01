@@ -6,6 +6,7 @@ enum ScreenType {
   desktop;
 
   bool get isMobile => this == ScreenType.mobile;
+  bool get isDesktop => this == ScreenType.desktop;
   bool get isMobileOrTablet =>
       this == ScreenType.mobile || this == ScreenType.tablet;
 }
