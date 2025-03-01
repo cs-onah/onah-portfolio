@@ -66,18 +66,33 @@ class ProjectPage extends StatelessWidget {
           const SvgRenderWidget(svgPath: SvgPath.projectHeader),
           const SizedBox(height: 29),
 
-          SizedBox(
-            height: projectListWidgetHeight,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: projectList.length,
-              separatorBuilder: (_, __) => const SizedBox(width: 54),
-              itemBuilder: (context, index) {
-                final project = projectList[index];
-                return ProjectCard(project: project);
-              },
+          if (context.screenType.isMobile)
+            ...[
+              ListView.separated(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: projectList.length,
+                separatorBuilder: (_, __) => const SizedBox(height: 40),
+                itemBuilder: (context, index) {
+                  final project = projectList[index];
+                  return Center(child: ProjectCard(project: project));
+                },
+              ),
+            ]
+          else ...[
+            SizedBox(
+              height: projectListWidgetHeight,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: projectList.length,
+                separatorBuilder: (_, __) => const SizedBox(width: 54),
+                itemBuilder: (context, index) {
+                  final project = projectList[index];
+                  return ProjectCard(project: project);
+                },
+              ),
             ),
-          ),
+          ],
 
           /// Project Carousel
           const SizedBox(height: 10),
