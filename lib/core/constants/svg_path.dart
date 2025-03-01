@@ -8,4 +8,10 @@ class SvgPath {
   static const allPlatformsWithoutApple = "$basePath/all_platforms_without_apple.svg";
   static const apple = "$basePath/apple.svg";
   static const playstore = "$basePath/playstore.svg";
+  static const toolsHeader = "$basePath/tools_header.svg";
+  static const android = "$basePath/android.svg";
+  static const ios = "$basePath/ios.svg";
+  static const dart = "$basePath/dart.svg";
+  static const flutter = "$basePath/flutter.svg";
+  static const javascript = "$basePath/javascript.svg";
 }

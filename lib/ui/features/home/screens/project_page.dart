@@ -20,6 +20,7 @@ List<Project> projectList = [
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.iservLogo,
+    coverImage: ImagePath.iservImage1,
   ),
   Project(
     title: "EvenFare",
@@ -32,6 +33,7 @@ List<Project> projectList = [
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.lscanLogo,
+    coverImage: ImagePath.lscanImage1,
   ),
   Project(
     title: "Tramatch",
