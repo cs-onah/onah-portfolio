@@ -81,10 +81,10 @@ ThemeData buildDarkTheme(ScreenType type) {
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      border: UnderlineInputBorder(
+      border: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColors.white),
       ),
-      enabledBorder: UnderlineInputBorder(
+      enabledBorder: const UnderlineInputBorder(
         borderSide: BorderSide(color: AppColors.white),
       ),
       labelStyle: textStyle.textFieldStyle,

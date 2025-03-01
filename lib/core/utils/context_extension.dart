@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onah_portfolio/ui/shared/widgets/app_snackbar.dart';
 import 'package:onah_portfolio/ui/themes/app_colors.dart';
 import 'package:onah_portfolio/ui/themes/device_size_enum.dart';
 import 'package:onah_portfolio/ui/themes/theme.dart';
