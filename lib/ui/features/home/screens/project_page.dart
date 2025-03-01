@@ -104,57 +104,69 @@ class ProjectPage extends StatelessWidget {
   }
 }
 
-class ProjectCard extends StatelessWidget {
+class ProjectCard extends StatefulWidget {
   final Project project;
   const ProjectCard({super.key, required this.project});
+  @override
+  State<ProjectCard> createState() => _ProjectCardState();
+}
+
+class _ProjectCardState extends State<ProjectCard> {
+  Project get project => widget.project;
+
+  bool _isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: projectListWidgetHeight,
-      width: 390,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 400,
-            width: 390,
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              image: project.coverImage == null
-                  ? null
-                  : DecorationImage(
-                      image: AssetImage(project.coverImage!),
-                      fit: BoxFit.cover,
-                    ),
-            ),
-          ),
-          const SizedBox(height: 15),
-          Row(
-            children: [
-              if (project.logoSvg != null)
-                Padding(
-                  padding: const EdgeInsets.only(right: 10.0),
-                  child: ImageRenderWidget.asset(imagePath: project.logoSvg!),
-                ),
-              Expanded(
-                child: Text(
-                  project.title ?? '',
-                  style: context.textTheme.bodyLarge,
-                ),
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: SizedBox(
+        height: projectListWidgetHeight,
+        width: 390,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 400,
+              width: 390,
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                image: project.coverImage == null
+                    ? null
+                    : DecorationImage(
+                        image: AssetImage(project.coverImage!),
+                        fit: BoxFit.cover,
+                      ),
               ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          Text(
-            project.description ?? "",
-            style: context.textTheme.bodyMedium?.copyWith(
-              color: context.colors.outlineColor,
             ),
-          ),
-          const SizedBox(height: 10),
-          const SvgRenderWidget(svgPath: SvgPath.allPlatforms),
-        ],
+            const SizedBox(height: 15),
+            Row(
+              children: [
+                if (project.logoSvg != null)
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: ImageRenderWidget.asset(imagePath: project.logoSvg!),
+                  ),
+                Expanded(
+                  child: Text(
+                    project.title ?? '',
+                    style: context.textTheme.bodyLarge,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Text(
+              project.description ?? "",
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: context.colors.outlineColor,
+              ),
+            ),
+            const SizedBox(height: 10),
+            const SvgRenderWidget(svgPath: SvgPath.allPlatforms),
+          ],
+        ),
       ),
     );
   }
