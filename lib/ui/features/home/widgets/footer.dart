@@ -13,18 +13,29 @@ class Footer extends StatelessWidget {
     return Container(
       color: context.cardColor,
       child: LayoutConstraint(
-        padding: const EdgeInsets.all(80),
+        padding: const EdgeInsets.all(70),
         child: Row(
           children: [
             Text(
               "${DateTime.now().year} Copyright© reserved.",
-              style: const TextStyle(fontFamily: AppFont.aeonik),
+              style: const TextStyle(
+                fontFamily: AppFont.aeonik,
+                color: Colors.black,
+                fontSize: 18,
+              ),
             ),
             const Spacer(),
             const Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text("Built with Flutter", style: TextStyle(fontFamily: AppFont.aeonik),),
+                Text(
+                  "Built with Flutter",
+                  style: TextStyle(
+                    fontFamily: AppFont.aeonik,
+                    color: Colors.black,
+                    fontSize: 18,
+                  ),
+                ),
                 SizedBox(width: 6),
                 SvgRenderWidget(svgPath: SvgPath.flutterSmall),
               ],

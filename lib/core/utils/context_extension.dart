@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/ui/shared/widgets/app_snackbar.dart';
 import 'package:onah_portfolio/ui/themes/app_colors.dart';
 import 'package:onah_portfolio/ui/themes/device_size_enum.dart';
 
@@ -26,8 +27,39 @@ extension BuildContextExt on BuildContext {
 
   double get width => MediaQuery.of(this).size.width;
 
+  void showErrorSnackBar(dynamic error) =>
+      ScaffoldMessenger.of(this).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.transparent,
+          content: AppSnackBar(
+            type: SnackBarType.error,
+            caption: error.toString(),
+          ),
+        ),
+      );
 
+  void showMessage(dynamic message, {Duration? duration}) =>
+      ScaffoldMessenger.of(this).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.transparent,
+          content: AppSnackBar(
+            type: SnackBarType.warning,
+            caption: message.toString(),
+          ),
+          duration: duration ?? const Duration(seconds: 1),
+        ),
+      );
 
+  void showSuccessSnackBar(dynamic message) =>
+      ScaffoldMessenger.of(this).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.transparent,
+          content: AppSnackBar(
+            type: SnackBarType.success,
+            caption: message.toString(),
+          ),
+        ),
+      );
 
   T customTheme<T>() => Theme.of(this).extension<T>()!;
 

@@ -17,7 +17,7 @@ class RootScreen extends StatelessWidget {
           ProjectPage(),
           ToolsPage(),
           FormPage(),
-          SizedBox(height: 30),
+          SizedBox(height: 100),
           Footer(),
         ],
       ),
