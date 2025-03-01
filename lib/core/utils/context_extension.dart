@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onah_portfolio/ui/shared/widgets/app_snackbar.dart';
 import 'package:onah_portfolio/ui/themes/app_colors.dart';
 import 'package:onah_portfolio/ui/themes/device_size_enum.dart';
+import 'package:onah_portfolio/ui/themes/theme.dart';
 
 extension BuildContextExt on BuildContext {
   ThemeData get theme => Theme.of(this);
@@ -27,37 +28,71 @@ extension BuildContextExt on BuildContext {
 
   double get width => MediaQuery.of(this).size.width;
 
-  void showErrorSnackBar(dynamic error) =>
-      ScaffoldMessenger.of(this).showSnackBar(
-        SnackBar(
-          backgroundColor: Colors.transparent,
-          content: AppSnackBar(
-            type: SnackBarType.error,
-            caption: error.toString(),
-          ),
-        ),
-      );
-
   void showMessage(dynamic message, {Duration? duration}) =>
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
-          backgroundColor: Colors.transparent,
-          content: AppSnackBar(
-            type: SnackBarType.warning,
-            caption: message.toString(),
+          backgroundColor: Colors.grey[800],
+          content: Row(
+            children: [
+              const Icon(Icons.info_outline, color: Colors.white),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Text(
+                  "$message",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontFamily: AppFont.aeonik,
+                  ),
+                ),
+              ),
+            ],
           ),
-          duration: duration ?? const Duration(seconds: 1),
+          duration: duration ?? const Duration(seconds: 5),
+        ),
+      );
+
+  void showErrorSnackBar(dynamic error) =>
+      ScaffoldMessenger.of(this).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              const Icon(Icons.cancel, color: Colors.white),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  error.toString(),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontFamily: AppFont.aeonik,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.red,
         ),
       );
 
   void showSuccessSnackBar(dynamic message) =>
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
-          backgroundColor: Colors.transparent,
-          content: AppSnackBar(
-            type: SnackBarType.success,
-            caption: message.toString(),
+          content: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Icon(Icons.check_circle, color: Colors.white),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text(
+                  "$message",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontFamily: AppFont.aeonik,
+                  ),
+                ),
+              ),
+            ],
           ),
+          backgroundColor: Colors.green,
         ),
       );
 
