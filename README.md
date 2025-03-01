@@ -1,16 +1,22 @@
-# onah_portfolio
+# Onah's Portfolio 👨‍💻
 
-Online Portfolio for csonah
+Online Portfolio for Chukwuebuka Onah. My own personal playground for flutter web.
+
+👉See Live Website: [LIVE](https://www.csonah.com)
+
+<p align="center">
+    <img width="280" height="567" src="https://github.com/cs-onah/cassava_disease_detection/blob/main/docs/image.png" alt="Loading photo" loading="eager">
+    <img width="280" height="567" src="https://github.com/cs-onah/cassava_disease_detection/blob/main/docs/anim.gif" alt="Loading demo..." loading="eager">
+</p>
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Clone the repository and run `flutter pub get` in the root of the project
 
-A few resources to get you started if this is your first Flutter project:
+You can run `flutter run` to start the app on your browser;
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Notices
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Remember to star ⭐️ this repository if you find it useful.
+
+Made with Flutter 💙
