@@ -47,3 +47,7 @@ flutter:
           weight: 300
         - asset: assets/fonts/CormorantInfant-Light.ttf
           weight: 200
+    - family: Aeonik
+      fonts:
+        - asset: assets/fonts/Aeonik-Regular.otf
+          weight: 400

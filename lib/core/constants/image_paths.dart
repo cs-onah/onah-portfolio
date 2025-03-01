@@ -16,4 +16,5 @@ class ImagePath {
   static const fieldmaxImage1 = "$basePath/fieldmax_image1.png";
   static const toolsIllus = "$basePath/tools_illus.png";
   static const toolsBg = "$basePath/tools_bg.png";
+  static const waveIllus = "$basePath/wave_illus.png";
 }

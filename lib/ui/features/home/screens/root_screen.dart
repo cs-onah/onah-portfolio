@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:onah_portfolio/core/constants/route_names.dart';
+import 'package:onah_portfolio/ui/features/home/screens/form_page.dart';
 import 'package:onah_portfolio/ui/features/home/screens/front_page.dart';
 import 'package:onah_portfolio/ui/features/home/screens/project_page.dart';
 import 'package:onah_portfolio/ui/features/home/screens/tools_page.dart';
+import 'package:onah_portfolio/ui/features/home/widgets/footer.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class RootScreen extends StatelessWidget {
+  const RootScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: [
-          const FrontPage(),
-          const ProjectPage(),
+        children: const [
+          FrontPage(),
+          ProjectPage(),
           ToolsPage(),
-          const SizedBox(height: 10),
+          FormPage(),
+          SizedBox(height: 30),
+          Footer(),
         ],
       ),
     );
   }
 }
-

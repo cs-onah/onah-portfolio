@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:onah_portfolio/core/constants/route_names.dart';
-import 'package:onah_portfolio/ui/features/home/screens/home_screen.dart';
+import 'package:onah_portfolio/ui/features/home/screens/root_screen.dart';
 import 'package:onah_portfolio/ui/features/projects/screens/project_screen.dart';
 
 final appRouter = GoRouter(
@@ -10,7 +10,7 @@ final appRouter = GoRouter(
   routes: [
     GoRoute(
       path: RouteNames.home,
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) => const RootScreen(),
     ),
     GoRoute(
       path: RouteNames.projects,
