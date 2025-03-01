@@ -53,6 +53,7 @@ class MobileToolsPage extends StatelessWidget {
               "Postman/Swagger | Jira |  Payment Services Integration",
               style: TextStyle(fontSize: 12),
             ),
+            const SizedBox(height: 10),
             const Divider(),
             Text(
               "State Management/Concepts",
@@ -76,7 +77,8 @@ class MobileToolsPage extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 20),
           ],
         ),
       ),
