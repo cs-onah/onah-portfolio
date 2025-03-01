@@ -42,7 +42,7 @@ class CustomAppBar extends StatelessWidget {
                 child: const Text("My Project"),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () => goToPage(HeaderKey.toolPage),
                 child: const Text("Tools"),
               ),
               TextButton(

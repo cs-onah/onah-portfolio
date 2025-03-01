@@ -21,9 +21,9 @@ class MobileDrawer extends StatelessWidget {
       context: context,
       barrierDismissible: true, // Allows tapping outside to close
       barrierLabel: "Top Drawer",
-      transitionDuration: Duration(milliseconds: 300), // Animation speed
+      transitionDuration: const Duration(milliseconds: 300), // Animation speed
       pageBuilder: (context, anim1, anim2) {
-        return Align(
+        return const Align(
           alignment: Alignment.topCenter,
           child: MobileDrawer(),
         );
@@ -31,8 +31,8 @@ class MobileDrawer extends StatelessWidget {
       transitionBuilder: (context, anim1, anim2, child) {
         return SlideTransition(
           position: Tween<Offset>(
-            begin: Offset(0, -1), // Starts from the top (-1 means above screen)
-            end: Offset(0, 0), // Ends at its normal position
+            begin: const Offset(0, -1), // Starts from the top (-1 means above screen)
+            end: const Offset(0, 0), // Ends at its normal position
           ).animate(CurvedAnimation(parent: anim1, curve: Curves.easeInOut)),
           child: child,
         );
@@ -97,7 +97,10 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: (){
+        context.pop();
+        onTap?.call();
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

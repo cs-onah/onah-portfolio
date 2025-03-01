@@ -19,7 +19,8 @@ class ToolsPage extends StatelessWidget {
     if (context.screenType.isMobile) return const MobileToolsPage();
     return Container(
       decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage(ImagePath.toolsBg))),
+        image: DecorationImage(image: AssetImage(ImagePath.toolsBg)),
+      ),
       child: LayoutConstraint(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

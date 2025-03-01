@@ -11,16 +11,20 @@ class RootScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: const [
-          FrontPage(),
-          ProjectPage(),
-          ToolsPage(),
-          FormPage(),
-          SizedBox(height: 100),
-          Footer(),
-        ],
+    return const Scaffold(
+      /// Prefer [SingleChildScrollView] to [ListView] so that all widgets are
+      /// loaded, and user can navigate to headers using [Scrollable.ensureVisible]
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            FrontPage(),
+            ProjectPage(),
+            ToolsPage(),
+            FormPage(),
+            SizedBox(height: 100),
+            Footer(),
+          ],
+        ),
       ),
     );
   }
