@@ -29,7 +29,7 @@ ThemeData buildDarkTheme(ScreenType type) {
     scaffoldBackgroundColor: AppColors.scaffoldColor,
     cardColor: AppColors.white,
     colorScheme: colorScheme,
-    dividerColor: AppColors.outlineColor,
+    dividerColor: AppColors.white,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       centerTitle: false,
@@ -81,15 +81,14 @@ ThemeData buildDarkTheme(ScreenType type) {
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      floatingLabelBehavior: FloatingLabelBehavior.always,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: AppColors.outlineColor),
+      border: const UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.white),
       ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(color: AppColors.outlineColor),
+      enabledBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(color: AppColors.white),
       ),
+      labelStyle: textStyle.textFieldStyle,
+      floatingLabelStyle: textStyle.textFieldStyle,
       isDense: false,
       filled: false,
     ),
@@ -101,6 +100,7 @@ ThemeData buildDarkTheme(ScreenType type) {
       displayLarge: textStyle.displayLarge,
       displayMedium: textStyle.displayMedium,
       displaySmall: textStyle.displaySmall,
+      titleMedium: textStyle.textFieldStyle,
     ),
     extensions: [
       AppColorExtension(

@@ -14,4 +14,6 @@ abstract class AppTextStyle {
   late TextStyle bodySmall;
   late TextStyle bodyMedium;
   late TextStyle bodyLarge;
+
+  late TextStyle textFieldStyle;
 }

@@ -46,4 +46,11 @@ class MobileTextStyles implements AppTextStyle{
     fontFamily: AppFont.cormorantInfant,
     color: AppColors.textColor,
   );
+
+  @override
+  TextStyle textFieldStyle = const TextStyle(
+    fontSize: 14,
+    fontFamily: AppFont.cormorantInfant,
+    color: AppColors.textColor,
+  );
 }

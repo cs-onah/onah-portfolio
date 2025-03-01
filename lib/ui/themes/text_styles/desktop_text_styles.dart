@@ -48,4 +48,11 @@ class DesktopTextStyles implements AppTextStyle {
     color: AppColors.textColor,
     fontWeight: FontWeight.w500,
   );
+
+  @override
+  TextStyle textFieldStyle = const TextStyle(
+    fontSize: 24,
+    fontFamily: AppFont.cormorantInfant,
+    color: AppColors.textColor,
+  );
 }
