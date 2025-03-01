@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget {
                 child: const Text("Tools"),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () => launchUrl(Uri.parse(blogUrl)),
                 child: const Text("Blog"),
               ),
               TextButton(

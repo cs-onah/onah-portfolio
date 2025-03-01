@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key});
@@ -48,8 +50,14 @@ class MobileDrawer extends StatelessWidget {
             ),
             const DrawerItem(title: "My Projects"),
             const DrawerItem(title: "Tools"),
-            const DrawerItem(title: "Blog"),
-            const DrawerItem(title: "Resume"),
+            DrawerItem(
+              title: "Blog",
+              onTap: () => launchUrl(Uri.parse(blogUrl)),
+            ),
+            DrawerItem(
+              title: "Resume",
+              onTap: () => launchUrl(Uri.parse(resumeUrl)),
+            ),
             const SizedBox(height: 38),
             ElevatedButton(
               onPressed: () {},
@@ -73,14 +81,17 @@ class DrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 19),
-        Text(title ?? '', style: const TextStyle(fontSize: 24)),
-        const SizedBox(height: 10),
-        const Divider(height: 1),
-      ],
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 19),
+          Text(title ?? '', style: const TextStyle(fontSize: 24)),
+          const SizedBox(height: 10),
+          const Divider(height: 1),
+        ],
+      ),
     );
   }
 }

@@ -89,7 +89,7 @@ class ToolsPage extends StatelessWidget {
                         ),
                         child: const ArrowText(
                           child: Text(
-                            "DOWNLOAD RESUME",
+                            "SEE RESUME",
                             overflow: TextOverflow.ellipsis,
                           ),
                         ),
