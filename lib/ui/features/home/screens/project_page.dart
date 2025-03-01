@@ -75,7 +75,7 @@ class ProjectPage extends StatelessWidget {
                 separatorBuilder: (_, __) => const SizedBox(height: 40),
                 itemBuilder: (context, index) {
                   final project = projectList[index];
-                  return ProjectCard(project: project);
+                  return Center(child: ProjectCard(project: project));
                 },
               ),
             ]

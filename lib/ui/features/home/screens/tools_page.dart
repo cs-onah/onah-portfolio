@@ -15,11 +15,10 @@ class ToolsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if(context.screenType.isMobile) return const MobileToolsPage();
+    if (context.screenType.isMobile) return const MobileToolsPage();
     return Container(
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage(ImagePath.toolsBg))
-      ),
+          image: DecorationImage(image: AssetImage(ImagePath.toolsBg))),
       child: LayoutConstraint(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,8 +29,10 @@ class ToolsPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(
-                    child:
-                        ImageRenderWidget.asset(imagePath: ImagePath.toolsIllus)),
+                  child: ImageRenderWidget.asset(
+                    imagePath: ImagePath.toolsIllus,
+                  ),
+                ),
                 const SizedBox(width: 30),
                 SizedBox(
                   width: context.width * 0.3,
@@ -40,8 +41,14 @@ class ToolsPage extends StatelessWidget {
                     children: [
                       const ToolTile(svg: SvgPath.flutter, title: "FLUTTER"),
                       const ToolTile(svg: SvgPath.dart, title: "DART"),
-                      const ToolTile(svg: SvgPath.android, title: "ANDROID SDK"),
-                      const ToolTile(svg: SvgPath.ios, title: "IOS DEVELOPMENT"),
+                      const ToolTile(
+                        svg: SvgPath.android,
+                        title: "ANDROID SDK",
+                      ),
+                      const ToolTile(
+                        svg: SvgPath.ios,
+                        title: "IOS DEVELOPMENT",
+                      ),
                       const ToolTile(
                         svg: SvgPath.javascript,
                         title: "JAVASCRIPT",
@@ -60,7 +67,9 @@ class ToolsPage extends StatelessWidget {
                         "Postman/Swagger | Jira |  Payment Services Integration",
                         style: TextStyle(fontSize: 12),
                       ),
+                      const SizedBox(height: 8),
                       const Divider(),
+                      const SizedBox(height: 4),
                       Text(
                         "State Management/Concepts",
                         style: context.textTheme.displaySmall

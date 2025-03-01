@@ -12,7 +12,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isMobile = context.screenType.isMobile;
+    bool isMobile = context.screenType.isMobileOrTablet;
     return Row(
       children: [
         SvgRenderWidget(svgPath: SvgPath.logo, width: isMobile ? 80 : null),
