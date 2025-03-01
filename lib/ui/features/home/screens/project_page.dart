@@ -3,6 +3,7 @@ import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/models/project_model.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
+import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
@@ -63,23 +64,24 @@ class ProjectPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 20),
-          const SvgRenderWidget(svgPath: SvgPath.projectHeader),
+          SvgRenderWidget(
+            svgPath: SvgPath.projectHeader,
+            key: HeaderKey.projectPage,
+          ),
           const SizedBox(height: 29),
 
-          if (context.screenType.isMobile)
-            ...[
-              ListView.separated(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: projectList.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 40),
-                itemBuilder: (context, index) {
-                  final project = projectList[index];
-                  return Center(child: ProjectCard(project: project));
-                },
-              ),
-            ]
-          else ...[
+          if (context.screenType.isMobile) ...[
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: projectList.length,
+              separatorBuilder: (_, __) => const SizedBox(height: 40),
+              itemBuilder: (context, index) {
+                final project = projectList[index];
+                return Center(child: ProjectCard(project: project));
+              },
+            ),
+          ] else ...[
             SizedBox(
               height: projectListWidgetHeight,
               child: ListView.separated(
