@@ -225,7 +225,7 @@ class _ProjectCardState extends State<ProjectCard> {
 
   Widget projectActions() {
     final size =
-        context.screenType.isMobile ? const Size(double.infinity, 43) : null;
+        context.screenType.isMobile ? const Size(double.infinity, 48) : null;
     return Row(
       children: [
         Expanded(
