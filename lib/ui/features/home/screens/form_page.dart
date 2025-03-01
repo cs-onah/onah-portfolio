@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
+import 'package:onah_portfolio/core/services/email_service.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/core/utils/validators.dart';
 import 'package:onah_portfolio/ui/features/home/screens/mobile_pages/mobile_form_page.dart';
@@ -102,6 +103,7 @@ class _FormWidgetState extends State<FormWidget> with Validators {
               SizedBox(width: width),
               Expanded(
                 child: TextFormField(
+                  controller: country,
                   decoration: const InputDecoration(labelText: "Country"),
                 ),
               ),
@@ -134,7 +136,12 @@ class _FormWidgetState extends State<FormWidget> with Validators {
     try {
       if (!formKey.currentState!.validate()) return;
       btnNotifier.value = true;
-      await Future.delayed(Duration(seconds: 3));
+      final String fullMessage = "Date: ${DateTime.now().toString()}"
+          "\n Name: ${firstName.text} ${lastName.text}"
+          "\n Email: ${email.text}"
+          "\n Country: ${country.text}"
+          "\n Message: ${message.text}";
+      await EmailService.sendMessage(fullMessage);
       context.showSuccessSnackBar("Message sent successfully");
     } catch (error) {
       context.showErrorSnackBar(error);
