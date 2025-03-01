@@ -13,6 +13,7 @@ List<Project> projectList = [
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.caryLogo,
+    coverImage: ImagePath.caryImage1,
   ),
   Project(
     title: "I-Serv",
@@ -37,12 +38,14 @@ List<Project> projectList = [
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.tramatchLogo,
+    coverImage: ImagePath.tramatchImage1,
   ),
   Project(
     title: "FieldMaxPro",
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.fieldmaxLogo,
+    coverImage: ImagePath.fieldmaxImage1,
   ),
 ];
 
@@ -97,7 +100,15 @@ class ProjectCard extends StatelessWidget {
           Container(
             height: 400,
             width: 390,
-            color: Colors.grey[200],
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              image: project.coverImage == null
+                  ? null
+                  : DecorationImage(
+                      image: AssetImage(project.coverImage!),
+                      fit: BoxFit.cover,
+                    ),
+            ),
           ),
           const SizedBox(height: 15),
           Row(

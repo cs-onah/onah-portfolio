@@ -4,9 +4,12 @@ class ImagePath {
   static const homeBg = "$basePath/home_bg.png";
   static const avatar = "$basePath/avatar.png";
   static const caryLogo = "$basePath/cary_logo.png";
+  static const caryImage1 = "$basePath/cary_image1.png";
   static const iservLogo = "$basePath/iserv_logo.png";
   static const evenfareLogo = "$basePath/evenfare.png";
   static const lscanLogo = "$basePath/lscan_logo.png";
   static const tramatchLogo = "$basePath/tramatch_logo.png";
+  static const tramatchImage1 = "$basePath/tramatch_image1.png";
   static const fieldmaxLogo = "$basePath/fieldmax_logo.png";
+  static const fieldmaxImage1 = "$basePath/fieldmax_image1.png";
 }
