@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/core/utils/context_extension.dart';
 
 class LayoutConstraint extends StatelessWidget {
   final Widget child;
@@ -7,10 +8,13 @@ class LayoutConstraint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final defaultPadding = context.screenType.isMobile
+        ? const EdgeInsets.symmetric(horizontal: 32)
+        : const EdgeInsets.symmetric(horizontal: 80);
     return ConstrainedBox(
       constraints: const BoxConstraints(maxWidth: 1440),
       child: Padding(
-        padding: padding ?? const EdgeInsets.symmetric(horizontal: 80),
+        padding: padding ?? defaultPadding,
         child: child,
       ),
     );

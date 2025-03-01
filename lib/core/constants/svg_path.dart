@@ -19,4 +19,5 @@ class SvgPath {
   static const snackSuccess = "$basePath/snack_success.svg";
   static const snackWarning = "$basePath/snack_warning.svg";
   static const snackError = "$basePath/snack_error.svg";
+  static const hamburger = "$basePath/hamburger.svg";
 }
