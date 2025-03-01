@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
+import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
@@ -47,14 +48,7 @@ class FrontPage extends StatelessWidget {
                       const SizedBox(height: 27),
                       ElevatedButton(
                         onPressed: () {},
-                        child: const Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text("HIRE ME"),
-                            SizedBox(width: 25),
-                            SvgRenderWidget(svgPath: SvgPath.arrowRight),
-                          ],
-                        ),
+                        child: const ArrowText(child: Text("HIRE ME")),
                       )
                     ],
                   ),
@@ -110,19 +104,14 @@ class CustomAppBar extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(18),
           ),
-          child: const Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                "HIRE ME",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontFamily: AppFont.cormorantInfant,
-                ),
+          child: const ArrowText(
+            child: Text(
+              "HIRE ME",
+              style: TextStyle(
+                fontSize: 16,
+                fontFamily: AppFont.cormorantInfant,
               ),
-              SizedBox(width: 25),
-              SvgRenderWidget(svgPath: SvgPath.arrowRight),
-            ],
+            ),
           ),
         )
       ],

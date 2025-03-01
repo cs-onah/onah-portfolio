@@ -29,7 +29,7 @@ ThemeData buildDarkTheme(ScreenType type) {
     scaffoldBackgroundColor: AppColors.scaffoldColor,
     cardColor: AppColors.white,
     colorScheme: colorScheme,
-    dividerColor: AppColors.outlineColor,
+    dividerColor: AppColors.white,
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.transparent,
       centerTitle: false,
