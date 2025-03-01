@@ -54,8 +54,14 @@ List<Project> projectList = [
 
 const projectListWidgetHeight = 550.0;
 
-class ProjectPage extends StatelessWidget {
+class ProjectPage extends StatefulWidget {
   const ProjectPage({super.key});
+  @override
+  State<ProjectPage> createState() => _ProjectPageState();
+}
+
+class _ProjectPageState extends State<ProjectPage> {
+  final controller = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -82,23 +88,61 @@ class ProjectPage extends StatelessWidget {
               },
             ),
           ] else ...[
-            SizedBox(
-              height: projectListWidgetHeight,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemCount: projectList.length,
-                separatorBuilder: (_, __) => const SizedBox(width: 54),
-                itemBuilder: (context, index) {
-                  final project = projectList[index];
-                  return ProjectCard(project: project);
-                },
-              ),
+            Stack(
+              children: [
+                SizedBox(
+                  height: projectListWidgetHeight,
+                  child: ListView.separated(
+                    controller: controller,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: projectList.length,
+                    separatorBuilder: (_, __) => const SizedBox(width: 54),
+                    itemBuilder: (context, index) {
+                      final project = projectList[index];
+                      return ProjectCard(project: project);
+                    },
+                  ),
+                ),
+                Positioned(
+                  top: 0,
+                  bottom: 0,
+                  right: 0,
+                  child: arrowButton(
+                    context,
+                    icon: Icons.arrow_forward,
+                    onTap: () => controller.animateTo(
+                      controller.position.maxScrollExtent,
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.linear,
+                    ),
+                  ),
+                )
+              ],
             ),
           ],
 
           /// Project Carousel
           const SizedBox(height: 10),
         ],
+      ),
+    );
+  }
+
+  Container arrowButton(
+    BuildContext context, {
+    VoidCallback? onTap,
+    IconData? icon,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(right: 40, bottom: 100),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: context.colors.black,
+      ),
+      child: IconButton(
+        onPressed: onTap,
+        iconSize: 40,
+        icon: Icon(icon, color: context.colors.white),
       ),
     );
   }
@@ -180,7 +224,8 @@ class _ProjectCardState extends State<ProjectCard> {
   }
 
   Widget projectActions() {
-    final size = context.screenType.isMobile ? Size(double.infinity, 43) : null;
+    final size =
+        context.screenType.isMobile ? const Size(double.infinity, 43) : null;
     return Row(
       children: [
         Expanded(
