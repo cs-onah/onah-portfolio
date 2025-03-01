@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
@@ -6,6 +7,7 @@ import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ToolsPage extends StatelessWidget {
   const ToolsPage({super.key});
@@ -69,7 +71,7 @@ class ToolsPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => launchUrl(Uri.parse(resumeUrl)),
                         style: ElevatedButton.styleFrom(
                           minimumSize: const Size(double.infinity, 0),
                           padding: const EdgeInsets.all(18),

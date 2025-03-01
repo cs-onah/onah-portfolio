@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
@@ -8,6 +9,7 @@ import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 import 'package:onah_portfolio/ui/themes/theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FrontPage extends StatelessWidget {
   const FrontPage({super.key});
@@ -93,7 +95,7 @@ class CustomAppBar extends StatelessWidget {
               child: const Text("Blog"),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () => launchUrl(Uri.parse(resumeUrl)),
               child: const Text("Resume"),
             ),
           ],
