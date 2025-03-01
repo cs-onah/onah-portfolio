@@ -15,16 +15,34 @@ List<Project> projectList = [
     logoSvg: ImagePath.caryLogo,
   ),
   Project(
+    title: "I-Serv",
+    description: "Design mobile-first, responsive apps that focus on delivering"
+        " a smooth, intuitive experience across multiple devices.",
+    logoSvg: ImagePath.iservLogo,
+  ),
+  Project(
     title: "EvenFare",
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.evenfareLogo,
   ),
   Project(
-    title: "I-Serv",
+    title: "L-Scan",
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
-    logoSvg: ImagePath.iservLogo,
+    logoSvg: ImagePath.lscanLogo,
+  ),
+  Project(
+    title: "Tramatch",
+    description: "Design mobile-first, responsive apps that focus on delivering"
+        " a smooth, intuitive experience across multiple devices.",
+    logoSvg: ImagePath.tramatchLogo,
+  ),
+  Project(
+    title: "FieldMaxPro",
+    description: "Design mobile-first, responsive apps that focus on delivering"
+        " a smooth, intuitive experience across multiple devices.",
+    logoSvg: ImagePath.fieldmaxLogo,
   ),
 ];
 

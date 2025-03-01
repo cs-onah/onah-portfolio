@@ -6,4 +6,7 @@ class ImagePath {
   static const caryLogo = "$basePath/cary_logo.png";
   static const iservLogo = "$basePath/iserv_logo.png";
   static const evenfareLogo = "$basePath/evenfare.png";
+  static const lscanLogo = "$basePath/lscan_logo.png";
+  static const tramatchLogo = "$basePath/tramatch_logo.png";
+  static const fieldmaxLogo = "$basePath/fieldmax_logo.png";
 }
