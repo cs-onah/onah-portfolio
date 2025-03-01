@@ -57,7 +57,7 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Spacer(),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () => goToPage(HeaderKey.formPage),
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(18),
             ),
