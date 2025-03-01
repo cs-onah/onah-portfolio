@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
+import 'package:onah_portfolio/ui/features/home/screens/mobile_pages/mobile_drawer.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 import 'package:onah_portfolio/ui/themes/theme.dart';
@@ -19,7 +20,7 @@ class CustomAppBar extends StatelessWidget {
         const Spacer(),
         if (isMobile) ...[
           InkWell(
-            onTap: () {}, // open drawer
+            onTap: () => const MobileDrawer().open(context), // open drawer
             child: const SvgRenderWidget(svgPath: SvgPath.hamburger),
           ),
         ] else ...[
