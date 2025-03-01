@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
+import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key});
+
+  void goToPage(GlobalKey key) {
+    Scrollable.ensureVisible(
+      key.currentContext!,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
 
   open(BuildContext context) {
     showGeneralDialog(
@@ -48,8 +57,14 @@ class MobileDrawer extends StatelessWidget {
                 onPressed: context.pop,
               ),
             ),
-            const DrawerItem(title: "My Projects"),
-            const DrawerItem(title: "Tools"),
+            DrawerItem(
+              title: "My Projects",
+              onTap: () => goToPage(HeaderKey.projectPage),
+            ),
+            DrawerItem(
+              title: "Tools",
+              onTap: () => goToPage(HeaderKey.toolPage),
+            ),
             DrawerItem(
               title: "Blog",
               onTap: () => launchUrl(Uri.parse(blogUrl)),
@@ -60,7 +75,7 @@ class MobileDrawer extends StatelessWidget {
             ),
             const SizedBox(height: 38),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => goToPage(HeaderKey.formPage),
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
               ),
