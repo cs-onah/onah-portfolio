@@ -15,4 +15,5 @@ class ImagePath {
   static const fieldmaxLogo = "$basePath/fieldmax_logo.png";
   static const fieldmaxImage1 = "$basePath/fieldmax_image1.png";
   static const toolsIllus = "$basePath/tools_illus.png";
+  static const toolsBg = "$basePath/tools_bg.png";
 }

@@ -12,48 +12,82 @@ class ToolsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutConstraint(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          const SvgRenderWidget(svgPath: SvgPath.projectHeader),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(
-                  child:
-                      ImageRenderWidget.asset(imagePath: ImagePath.toolsIllus)),
-              const SizedBox(width: 30),
-              SizedBox(
-                width: context.width * 0.3,
-                child: Column(
-                  children: [
-                    const ToolTile(svg: SvgPath.flutter, title: "FLUTTER"),
-                    const ToolTile(svg: SvgPath.dart, title: "DART"),
-                    const ToolTile(svg: SvgPath.android, title: "ANDROID SDK"),
-                    const ToolTile(svg: SvgPath.ios, title: "IOS DEVELOPMENT"),
-                    const ToolTile(svg: SvgPath.javascript, title: "JAVASCRIPT"),
-                    const SizedBox(height: 22),
-                    ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(double.infinity, 0),
-                        padding: const EdgeInsets.all(18),
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage(ImagePath.toolsBg))
+      ),
+      child: LayoutConstraint(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 20),
+            const SvgRenderWidget(svgPath: SvgPath.projectHeader),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                    child:
+                        ImageRenderWidget.asset(imagePath: ImagePath.toolsIllus)),
+                const SizedBox(width: 30),
+                SizedBox(
+                  width: context.width * 0.3,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const ToolTile(svg: SvgPath.flutter, title: "FLUTTER"),
+                      const ToolTile(svg: SvgPath.dart, title: "DART"),
+                      const ToolTile(svg: SvgPath.android, title: "ANDROID SDK"),
+                      const ToolTile(svg: SvgPath.ios, title: "IOS DEVELOPMENT"),
+                      const ToolTile(
+                        svg: SvgPath.javascript,
+                        title: "JAVASCRIPT",
                       ),
-                      child: const ArrowText(
-                        child: Text(
-                          "DOWNLOAD RESUME",
-                          overflow: TextOverflow.ellipsis,
+                      const SizedBox(height: 22),
+                      Text(
+                        "More Tools",
+                        style: context.textTheme.displaySmall
+                            ?.copyWith(fontSize: 20),
+                      ),
+                      const SizedBox(height: 5),
+                      const Text(
+                        "MacOS | Git | GitHub | Github Actions | "
+                        "Google Cloud Services | Code Magic CI/CD | "
+                        "BitBucket Pipelines | Google Play & AppStore App Versioning | "
+                        "Postman/Swagger | Jira |  Payment Services Integration",
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      const Divider(),
+                      Text(
+                        "State Management/Concepts",
+                        style: context.textTheme.displaySmall
+                            ?.copyWith(fontSize: 20),
+                      ),
+                      const SizedBox(height: 5),
+                      const Text(
+                        "Riverpod | Bloc | Provider | GetX | MobX | TDD | MVVM | SOLID | Clean",
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      const SizedBox(height: 15),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(double.infinity, 0),
+                          padding: const EdgeInsets.all(18),
                         ),
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          )
-        ],
+                        child: const ArrowText(
+                          child: Text(
+                            "DOWNLOAD RESUME",
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -14,4 +14,5 @@ class SvgPath {
   static const dart = "$basePath/dart.svg";
   static const flutter = "$basePath/flutter.svg";
   static const javascript = "$basePath/javascript.svg";
+  static const formHeader = "$basePath/form_header.svg";
 }
