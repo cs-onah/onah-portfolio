@@ -26,6 +26,7 @@ class FormPage extends StatelessWidget {
           const SvgRenderWidget(svgPath: SvgPath.formHeader),
           const SizedBox(height: 19),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               /// Form
               const Expanded(child: FormWidget()),
