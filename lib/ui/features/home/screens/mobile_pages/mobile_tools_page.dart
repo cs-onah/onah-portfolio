@@ -24,7 +24,7 @@ class MobileToolsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const SvgRenderWidget(svgPath: SvgPath.projectHeader),
+            const SvgRenderWidget(svgPath: SvgPath.toolsHeader),
             const SizedBox(height: 30),
             Flexible(
               child: ImageRenderWidget.asset(
@@ -40,7 +40,7 @@ class MobileToolsPage extends StatelessWidget {
               svg: SvgPath.javascript,
               title: "JAVASCRIPT",
             ),
-            const SizedBox(height: 22),
+            const SizedBox(height: 40),
             Text(
               "More Tools",
               style: context.textTheme.displaySmall?.copyWith(fontSize: 20),
@@ -63,7 +63,7 @@ class MobileToolsPage extends StatelessWidget {
               "Riverpod | Bloc | Provider | GetX | MobX | TDD | MVVM | SOLID | Clean",
               style: TextStyle(fontSize: 12),
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 40),
             ElevatedButton(
               onPressed: () => launchUrl(Uri.parse(resumeUrl)),
               style: ElevatedButton.styleFrom(

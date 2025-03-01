@@ -25,7 +25,7 @@ class ToolsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            const SvgRenderWidget(svgPath: SvgPath.projectHeader),
+            const SvgRenderWidget(svgPath: SvgPath.toolsHeader),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
