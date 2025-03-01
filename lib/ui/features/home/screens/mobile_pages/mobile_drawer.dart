@@ -75,7 +75,10 @@ class MobileDrawer extends StatelessWidget {
             ),
             const SizedBox(height: 38),
             ElevatedButton(
-              onPressed: () => goToPage(HeaderKey.formPage),
+              onPressed: () {
+                context.pop();
+                goToPage(HeaderKey.formPage);
+              },
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
               ),
