@@ -1,11 +1,11 @@
 {
-    "name": "onah_portfolio",
-    "short_name": "onah_portfolio",
+    "name": "Onah's Portfolio",
+    "short_name": "csonah",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "Online Portfolio for csonah",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "description": "Transforming ideas into delightful digital experiences. I specialize in building beautiful, high performant and scalable applications for the Android & iOS platforms. Dive into my portfolio and let's create something extraordinary.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
