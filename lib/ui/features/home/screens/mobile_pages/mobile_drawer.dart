@@ -6,47 +6,61 @@ class MobileDrawer extends StatelessWidget {
   const MobileDrawer({super.key});
 
   open(BuildContext context) {
-    showModalBottomSheet(
+    showGeneralDialog(
       context: context,
-      isScrollControlled: true, // Allows full control over height
-      backgroundColor: Colors.transparent, // Transparent background
-      builder: (context) => const Align(
-        alignment: Alignment.topCenter,
-        child: MobileDrawer(),
-      ),
+      barrierDismissible: true, // Allows tapping outside to close
+      barrierLabel: "Top Drawer",
+      transitionDuration: Duration(milliseconds: 300), // Animation speed
+      pageBuilder: (context, anim1, anim2) {
+        return Align(
+          alignment: Alignment.topCenter,
+          child: MobileDrawer(),
+        );
+      },
+      transitionBuilder: (context, anim1, anim2, child) {
+        return SlideTransition(
+          position: Tween<Offset>(
+            begin: Offset(0, -1), // Starts from the top (-1 means above screen)
+            end: Offset(0, 0), // Ends at its normal position
+          ).animate(CurvedAnimation(parent: anim1, curve: Curves.easeInOut)),
+          child: child,
+        );
+      },
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: context.scaffoldBackgroundColor,
-      padding: const EdgeInsets.symmetric(horizontal: 18),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const SizedBox(height: 10),
-          Align(
-            alignment: Alignment.centerRight,
-            child: IconButton(
-              icon: const Icon(Icons.close, size: 30),
-              onPressed: context.pop,
+    return Material(
+      child: Container(
+        color: context.scaffoldBackgroundColor,
+        padding: const EdgeInsets.symmetric(horizontal: 18),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 10),
+            Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                icon: const Icon(Icons.close, size: 30),
+                onPressed: context.pop,
+              ),
             ),
-          ),
-          const DrawerItem(title: "My Projects"),
-          const DrawerItem(title: "Tools"),
-          const DrawerItem(title: "Blog"),
-          const DrawerItem(title: "Resume"),
-          const SizedBox(height: 38),
-          ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              minimumSize: const Size(double.infinity, 50),
+            const DrawerItem(title: "My Projects"),
+            const DrawerItem(title: "Tools"),
+            const DrawerItem(title: "Blog"),
+            const DrawerItem(title: "Resume"),
+            const SizedBox(height: 38),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(double.infinity, 50),
+              ),
+              child: const ArrowText(child: Text("HIRE ME")),
             ),
-            child: const ArrowText(child: Text("HIRE ME")),
-          ),
-          const SizedBox(height: 20),
-        ],
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
