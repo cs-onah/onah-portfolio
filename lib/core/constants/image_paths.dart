@@ -8,6 +8,7 @@ class ImagePath {
   static const iservLogo = "$basePath/iserv_logo.png";
   static const iservImage1 = "$basePath/iserv_image1.png";
   static const evenfareLogo = "$basePath/evenfare.png";
+  static const evenfareImage1 = "$basePath/evenfare_image1.png";
   static const lscanLogo = "$basePath/lscan_logo.png";
   static const lscanImage1 = "$basePath/lscan_image1.png";
   static const tramatchLogo = "$basePath/tramatch_logo.png";

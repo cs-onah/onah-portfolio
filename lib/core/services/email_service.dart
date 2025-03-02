@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 class EmailService {
@@ -9,11 +10,11 @@ class EmailService {
       'Cookie': 'fs_ab1=control'
     };
     String body = jsonEncode({
-      "email": "revelationjay02@gmail.com",
+      "email": dotenv.env['RECEIVER_EMAIL'],
       "message": message,
     });
     var response = await http.post(
-      Uri.parse('https://formspree.io/f/mbldnooo'),
+      Uri.parse('https://formspree.io/f/${dotenv.env['FORMSPREE_KEY']}'),
       headers: headers,
       body: body,
     );

@@ -10,12 +10,12 @@ class SvgRenderWidget extends StatelessWidget {
   final BoxFit? fit;
 
   const SvgRenderWidget({
-    Key? key,
+    super.key,
     this.width,
     this.height,
     this.color,
     required this.svgPath, this.fit,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

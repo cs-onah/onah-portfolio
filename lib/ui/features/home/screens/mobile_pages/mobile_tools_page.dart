@@ -80,7 +80,7 @@ class MobileToolsPage extends StatelessWidget {
               ),
               child: const ArrowText(
                 child: Text(
-                  "DOWNLOAD RESUME",
+                  "VIEW RESUME",
                   overflow: TextOverflow.ellipsis,
                 ),
               ),

@@ -5,6 +5,7 @@ class Project {
   final String? description;
   final String? androidLink;
   final String? iosLink;
+  final String? githubLink;
   Project({
     this.logoSvg,
     this.coverImage,
@@ -12,5 +13,6 @@ class Project {
     this.description,
     this.androidLink,
     this.iosLink,
+    this.githubLink,
   });
 }

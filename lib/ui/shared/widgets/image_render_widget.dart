@@ -9,7 +9,6 @@ class ImageRenderWidget extends StatelessWidget {
   static const header = <String, String>{};
 
   const ImageRenderWidget._({
-    Key? key,
     this.imageUrl,
     required this.height,
     required this.width,
@@ -18,8 +17,7 @@ class ImageRenderWidget extends StatelessWidget {
     this.placeholder,
     this.file,
   })  : assert(imagePath == null || imageUrl == null,
-            "You can't pass both image path and image url"),
-        super(key: key);
+            "You can't pass both image path and image url");
   final String? imageUrl;
   final double? height;
   final double? width;

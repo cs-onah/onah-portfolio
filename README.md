@@ -24,7 +24,17 @@ Online Portfolio for Chukwuebuka Onah. My own personal playground for flutter we
 
 Clone the repository and run `flutter pub get` in the root of the project
 
-You can run `flutter run` to start the app on your browser;
+Create a `.env` file in the root of the project and add the following:
+
+```env
+FORMSPREE_KEY=YOUR_FORMSPREE_KEY
+RECEIVER_EMAIL=YOUR_EMAIL
+```
+
+Get your formspree key from [Formspree](https://formspree.io/) and replace `YOUR_FORMSPREE_KEY` with your key.
+Replace `YOUR_EMAIL` with your email. This is the email that will receive the form submissions from the website.
+
+You can run `flutter run` in your terminal to start the app on your browser;
 
 ### Notices
 
