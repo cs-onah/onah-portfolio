@@ -81,8 +81,9 @@ class TitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const speed = Duration(milliseconds: 100);
-    final alignment =
-        context.screenType.isMobile ? TextAlign.center : TextAlign.start;
+    final alignment = context.screenType.isMobileOrTablet
+        ? TextAlign.center
+        : TextAlign.start;
     return DefaultTextStyle(
       style: context.textTheme.displayMedium!,
       textAlign: alignment,
