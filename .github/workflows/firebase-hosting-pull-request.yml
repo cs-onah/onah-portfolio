@@ -18,7 +18,9 @@ jobs:
       - run: |
           echo "FORMSPREE_KEY=${{ secrets.FORMSPREE_KEY }}" >> .env
           echo "RECEIVER_EMAIL=${{ secrets.RECEIVER_EMAIL }}" >> .env
-      - run: cat .env | grep "FORMSPREE_KEY\|RECEIVER_EMAIL"
+      - run: |
+          echo "FORMSPREE_KEY length: ${#FORMSPREE_KEY}"
+          echo "RECEIVER_EMAIL length: ${#RECEIVER_EMAIL}"
       - run: cat .env
       - run: flutter pub get
       - run: flutter build web
