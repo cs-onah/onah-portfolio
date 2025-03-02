@@ -32,9 +32,9 @@ RECEIVER_EMAIL=YOUR_EMAIL
 ```
 
 Get your formspree key from [Formspree](https://formspree.io/) and replace `YOUR_FORMSPREE_KEY` with your key.
-And replace `YOUR_EMAIL` with your email. This is the email that will receive the form submissions from the website.
+Replace `YOUR_EMAIL` with your email. This is the email that will receive the form submissions from the website.
 
-You can run `flutter run` to start the app on your browser;
+You can run `flutter run` in your terminal to start the app on your browser;
 
 ### Notices
 

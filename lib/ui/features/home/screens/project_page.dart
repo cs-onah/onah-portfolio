@@ -6,14 +6,13 @@ import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/shared/widgets/bouncing_animation.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
-import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 
 List<Project> projectList = [
   Project(
     title: "Cary",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: "Cary; A logistics application that allows users negotiate prices with movers,"
+        " and track the entire delivery process. Cary currently operates in Cardiff, UK.",
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
   ),
@@ -29,11 +28,13 @@ List<Project> projectList = [
     description: "Design mobile-first, responsive apps that focus on delivering"
         " a smooth, intuitive experience across multiple devices.",
     logoSvg: ImagePath.evenfareLogo,
+    coverImage: ImagePath.evenfareImage1,
   ),
   Project(
     title: "L-Scan",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: " Passion project - exploring how to integrate Image "
+        "Classification AI models into Flutter Apps. This app predicts "
+        "certain diseases in cassava plant leaves from an input image",
     logoSvg: ImagePath.lscanLogo,
     coverImage: ImagePath.lscanImage1,
   ),
@@ -53,7 +54,7 @@ List<Project> projectList = [
   ),
 ];
 
-const projectListWidgetHeight = 550.0;
+const projectListWidgetHeight = 580.0;
 
 class ProjectPage extends StatefulWidget {
   const ProjectPage({super.key});
@@ -248,6 +249,7 @@ class _ProjectCardState extends State<ProjectCard> {
                   child: Text(
                     project.title ?? '',
                     style: context.textTheme.bodyLarge,
+                    maxLines: 3,
                   ),
                 ),
               ],
