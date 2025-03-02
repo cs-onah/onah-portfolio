@@ -18,7 +18,8 @@ jobs:
       - run: |
           echo "FORMSPREE_KEY=${{ secrets.FORMSPREE_KEY }}" >> .env
           echo "RECEIVER_EMAIL=${{ secrets.RECEIVER_EMAIL }}" >> .env
-          echo "Check Values ${{ secrets.FORMSPREE_KEY }}"
+      - run: cat .env | grep "FORMSPREE_KEY\|RECEIVER_EMAIL"
+      - run: cat .env
       - run: flutter pub get
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
