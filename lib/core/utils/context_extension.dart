@@ -32,10 +32,11 @@ extension BuildContextExt on BuildContext {
         SnackBar(
           backgroundColor: Colors.grey[800],
           content: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(Icons.info_outline, color: Colors.white),
               const SizedBox(width: 16),
-              Expanded(
+              Flexible(
                 child: Text(
                   "$message",
                   style: const TextStyle(
@@ -54,10 +55,11 @@ extension BuildContextExt on BuildContext {
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
           content: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(Icons.cancel, color: Colors.white),
               const SizedBox(width: 10),
-              Expanded(
+              Flexible(
                 child: Text(
                   error.toString(),
                   style: const TextStyle(
@@ -76,11 +78,11 @@ extension BuildContextExt on BuildContext {
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
           content: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Icon(Icons.check_circle, color: Colors.white),
               const SizedBox(width: 10),
-              Expanded(
+              Flexible(
                 child: Text(
                   "$message",
                   style: const TextStyle(

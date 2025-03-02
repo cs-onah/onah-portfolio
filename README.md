@@ -24,7 +24,7 @@ Online Portfolio for Chukwuebuka Onah. My own personal playground for flutter we
 
 Clone the repository and run `flutter pub get` in the root of the project
 
-Create a `.env` file in the root of the project and add the following:
+Create an `env` file in the root of the project and add the following:
 
 ```env
 FORMSPREE_KEY=YOUR_FORMSPREE_KEY
