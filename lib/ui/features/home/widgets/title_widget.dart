@@ -14,7 +14,8 @@ class _TitleWidgetState extends State<TitleWidget> {
     'IT Project Manager',
   ];
 
-  final controller = AnimatedTextController();
+  bool animationComplete = false;
+
   @override
   Widget build(BuildContext context) {
     const speed = Duration(milliseconds: 100);
@@ -29,17 +30,22 @@ class _TitleWidgetState extends State<TitleWidget> {
       /// Layout builder is used to estimate size of text, and fix text height
       /// To avoid up and down behavior caused by [TypewriterAnimatedText]
       child: LayoutBuilder(builder: (context, constraints) {
+        if(animationComplete) {
+          return Text(roles.first, style: style, textAlign: alignment);
+        }
+
         double estimatedHeight = _calculateTextHeight(
           context,
-          roles[0],
+          roles.first,
           style,
           constraints.maxWidth,
         );
         return SizedBox(
           height: estimatedHeight,
           child: AnimatedTextKit(
-            controller: controller,
-            onFinished: () => controller.reset(),
+            onFinished: () {
+              setState(() => animationComplete = true);
+            },
             animatedTexts: roles.map((role) {
               return TypewriterAnimatedText(
                 role,
