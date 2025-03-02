@@ -4,6 +4,7 @@ import 'package:onah_portfolio/core/constants/svg_path.dart';
 import 'package:onah_portfolio/core/models/project_model.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
+import 'package:onah_portfolio/ui/shared/widgets/bouncing_animation.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
@@ -65,84 +66,92 @@ class _ProjectPageState extends State<ProjectPage> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutConstraint(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          SvgRenderWidget(
+    final padding = context.screenType.isMobile
+        ? const EdgeInsets.symmetric(horizontal: 32)
+        : const EdgeInsets.symmetric(horizontal: 80);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 20),
+        Padding(
+          padding: padding,
+          child: SvgRenderWidget(
             svgPath: SvgPath.projectHeader,
             key: HeaderKey.projectPage,
           ),
-          const SizedBox(height: 29),
+        ),
+        const SizedBox(height: 29),
 
-          if (context.screenType.isMobile) ...[
-            ListView.separated(
-              shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
-              itemCount: projectList.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 40),
-              itemBuilder: (context, index) {
-                final project = projectList[index];
-                return Center(child: ProjectCard(project: project));
-              },
-            ),
-          ] else ...[
-            Stack(
-              children: [
-                SizedBox(
-                  height: projectListWidgetHeight,
-                  child: ListView.separated(
-                    controller: controller,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: projectList.length,
-                    separatorBuilder: (_, __) => const SizedBox(width: 54),
-                    itemBuilder: (context, index) {
-                      final project = projectList[index];
-                      return ProjectCard(project: project);
-                    },
+        if (context.screenType.isMobile) ...[
+          ListView.separated(
+            padding: padding,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: projectList.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 40),
+            itemBuilder: (context, index) {
+              final project = projectList[index];
+              return Center(child: ProjectCard(project: project));
+            },
+          ),
+        ] else ...[
+          Stack(
+            children: [
+              SizedBox(
+                height: projectListWidgetHeight,
+                child: ListView.separated(
+                  padding: padding,
+                  controller: controller,
+                  scrollDirection: Axis.horizontal,
+                  itemCount: projectList.length,
+                  separatorBuilder: (_, __) => const SizedBox(width: 54),
+                  itemBuilder: (context, index) {
+                    final project = projectList[index];
+                    return ProjectCard(project: project);
+                  },
+                ),
+              ),
+              Positioned(
+                top: 0,
+                bottom: 0,
+                right: 0,
+                child: arrowButton(
+                  context,
+                  icon: Icons.arrow_forward,
+                  onTap: () => controller.animateTo(
+                    controller.position.maxScrollExtent,
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.linear,
                   ),
                 ),
-                Positioned(
-                  top: 0,
-                  bottom: 0,
-                  right: 0,
-                  child: arrowButton(
-                    context,
-                    icon: Icons.arrow_forward,
-                    onTap: () => controller.animateTo(
-                      controller.position.maxScrollExtent,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.linear,
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ],
-
-          /// Project Carousel
-          const SizedBox(height: 10),
+              )
+            ],
+          ),
         ],
-      ),
+
+        /// Project Carousel
+        const SizedBox(height: 10),
+      ],
     );
   }
 
-  Container arrowButton(
+  Widget arrowButton(
     BuildContext context, {
     VoidCallback? onTap,
     IconData? icon,
   }) {
-    return Container(
-      margin: const EdgeInsets.only(right: 40, bottom: 100),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: context.colors.black,
-      ),
-      child: IconButton(
-        onPressed: onTap,
-        iconSize: 40,
-        icon: Icon(icon, color: context.colors.white),
+    return BounceAnimation(
+      child: Container(
+        margin: const EdgeInsets.only(right: 40, bottom: 100),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: context.colors.black,
+        ),
+        child: IconButton(
+          onPressed: onTap,
+          iconSize: 40,
+          icon: Icon(icon, color: context.colors.white),
+        ),
       ),
     );
   }
