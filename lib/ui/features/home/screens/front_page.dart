@@ -78,29 +78,59 @@ class FrontPage extends StatelessWidget {
 
 class TitleWidget extends StatelessWidget {
   const TitleWidget({super.key});
+
+  static const List<String> roles = [
+    'Mobile Software Developer',
+    'IT Project Manager',
+  ];
+
   @override
   Widget build(BuildContext context) {
     const speed = Duration(milliseconds: 100);
     final alignment = context.screenType.isMobileOrTablet
         ? TextAlign.center
         : TextAlign.start;
+    final style = context.textTheme.displayMedium!;
     return DefaultTextStyle(
-      style: context.textTheme.displayMedium!,
+      style: style,
       textAlign: alignment,
-      child: AnimatedTextKit(
-        animatedTexts: [
-          TypewriterAnimatedText(
-            'Mobile Software Developer',
-            speed: speed,
-            textAlign: alignment,
+
+      /// Layout builder is used to estimate size of text, and fix text height
+      /// To avoid up and down behavior caused by [TypewriterAnimatedText]
+      child: LayoutBuilder(builder: (context, constraints) {
+        double estimatedHeight = _calculateTextHeight(
+          context,
+          roles[0],
+          style,
+          constraints.maxWidth,
+        );
+        return SizedBox(
+          height: estimatedHeight,
+          child: AnimatedTextKit(
+            animatedTexts: roles.map((role) {
+              return TypewriterAnimatedText(
+                role,
+                speed: speed,
+                textAlign: alignment,
+              );
+            }).toList(),
           ),
-          TypewriterAnimatedText(
-            'IT Project Manager',
-            speed: speed,
-            textAlign: alignment,
-          ),
-        ],
-      ),
+        );
+      }),
     );
+  }
+
+  double _calculateTextHeight(
+    BuildContext context,
+    String text,
+    TextStyle style,
+    double maxWidth,
+  ) {
+    final textPainter = TextPainter(
+      text: TextSpan(text: text, style: style),
+      maxLines: null, // Allow multiple lines
+      textDirection: TextDirection.ltr,
+    )..layout(maxWidth: maxWidth); // Compute wrapping
+    return textPainter.size.height; // Return calculated height
   }
 }
