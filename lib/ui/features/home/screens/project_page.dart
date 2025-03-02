@@ -6,6 +6,7 @@ import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/shared/widgets/bouncing_animation.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
+import 'package:onah_portfolio/ui/shared/widgets/spaced_row.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 
 List<Project> projectList = [
@@ -47,8 +48,7 @@ List<Project> projectList = [
   ),
   Project(
     title: "FieldMaxPro",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: "FieldMaxPro is an enterprise fieldforce management system designed for Sales/Marketing Managers. The app allows managers track activities of their field representatives.",
     logoSvg: ImagePath.fieldmaxLogo,
     coverImage: ImagePath.fieldmaxImage1,
   ),
@@ -250,6 +250,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     project.title ?? '',
                     style: context.textTheme.bodyLarge,
                     maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ),
               ],
@@ -280,7 +281,8 @@ class _ProjectCardState extends State<ProjectCard> {
   Widget projectActions() {
     final size =
         context.screenType.isMobile ? const Size(double.infinity, 48) : null;
-    return Row(
+    return SpacedRow(
+      spacing: 10,
       children: [
         Expanded(
           child: ElevatedButton(
@@ -296,7 +298,6 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
           ),
         ),
-        const SizedBox(width: 10),
         Expanded(
           child: ElevatedButton(
             onPressed: () {},
