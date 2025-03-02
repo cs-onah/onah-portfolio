@@ -111,18 +111,52 @@ class _ProjectPageState extends State<ProjectPage> {
                   },
                 ),
               ),
+
+              /// Right arrow
               Positioned(
                 top: 0,
                 bottom: 0,
                 right: 0,
-                child: arrowButton(
-                  context,
-                  icon: Icons.arrow_forward,
-                  onTap: () => controller.animateTo(
-                    controller.position.maxScrollExtent,
-                    duration: const Duration(milliseconds: 500),
-                    curve: Curves.linear,
-                  ),
+                child: ListenableBuilder(
+                  listenable: controller,
+                  builder: (context, value) {
+                    if(controller.position.pixels > (controller.position.maxScrollExtent - 50)) {
+                      return const SizedBox.shrink();
+                    }
+                    return arrowButton(
+                      context,
+                      icon: Icons.arrow_forward,
+                      onTap: () => controller.animateTo(
+                        controller.position.maxScrollExtent,
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.linear,
+                      ),
+                    );
+                  }
+                ),
+              ),
+
+              /// Left arrow
+              Positioned(
+                top: 0,
+                bottom: 0,
+                left: 40,
+                child: ListenableBuilder(
+                    listenable: controller,
+                    builder: (context, value) {
+                      if(controller.position.pixels < 50) {
+                        return const SizedBox.shrink();
+                      }
+                      return arrowButton(
+                        context,
+                        icon: Icons.arrow_back,
+                        onTap: () => controller.animateTo(
+                          controller.position.minScrollExtent,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.linear,
+                        ),
+                      );
+                    }
                 ),
               )
             ],
