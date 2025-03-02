@@ -21,11 +21,11 @@ jobs:
           envkey_FORMSPREE_KEY: ${{ secrets.FORMSPREE_KEY }}
           envkey_RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           directory: .
-          file_name: .env
+          file_name: env
           fail_on_empty: false
           sort_keys: false
       - name: Verify Env
-        run: cat .env
+        run: cat env
       - run: flutter pub get
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0

@@ -5,6 +5,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() async {
   usePathUrlStrategy();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "env");
   runApp(const MyApp());
 }
