@@ -20,6 +20,7 @@ dependencies:
   animated_text_kit: ^4.2.3
   url_launcher: ^6.3.0
   http: ^0.13.3
+  flutter_dotenv: ^5.2.1
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +46,7 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - .env
 
   fonts:
     - family: Michroma
