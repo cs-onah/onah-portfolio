@@ -33,16 +33,6 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
-      - run: |
-          echo "FORMSPREE_KEY=${{ secrets.FORMSPREE_KEY }}" >> .env
-          echo "RECEIVER_EMAIL=${{ secrets.RECEIVER_EMAIL }}" >> .env
-      - run: |
-          echo "FORMSPREE_KEY length: ${#FORMSPREE_KEY}"
-          echo "RECEIVER_EMAIL length: ${#RECEIVER_EMAIL}"
-        env:
-            FORMSPREE_KEY: ${{ secrets.FORMSPREE_KEY }}
-            RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
-      - run: cat .env
       - run: flutter pub get
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
