@@ -18,7 +18,7 @@ List<Project> projectList = [
         " and track the entire delivery process. Cary currently operates in Cardiff, UK.",
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
-    iosLink: "https://apps.apple.com/us/app/cary-courier/id6738658174",
+    iosLink: "https://apps.apple.com/us/app/cary-mobile/id6738658124",
   ),
   Project(
     title: "I-Serv",
