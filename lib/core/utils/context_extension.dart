@@ -30,6 +30,7 @@ extension BuildContextExt on BuildContext {
   void showMessage(dynamic message, {Duration? duration}) =>
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
+          width: screenType.isDesktop ? 350 : null,
           backgroundColor: Colors.grey[800],
           content: Row(
             mainAxisSize: MainAxisSize.min,
@@ -54,6 +55,7 @@ extension BuildContextExt on BuildContext {
   void showErrorSnackBar(dynamic error) =>
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
+          width: screenType.isDesktop ? 350 : null,
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -77,6 +79,7 @@ extension BuildContextExt on BuildContext {
   void showSuccessSnackBar(dynamic message) =>
       ScaffoldMessenger.of(this).showSnackBar(
         SnackBar(
+          width: screenType.isDesktop ? 350 : null,
           content: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
