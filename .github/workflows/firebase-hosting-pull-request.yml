@@ -16,7 +16,7 @@ jobs:
           envkey_RECEIVER_EMAIL: ${{ secrets.RECEIVER_EMAIL }}
           directory: .
           file_name: .env
-          fail_on_empty: true
+          fail_on_empty: false
           sort_keys: false
       - name: Verify .env file
         run: cat .env
@@ -33,6 +33,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
+      - run: cat .env
       - run: flutter pub get
       - run: flutter build web
       - uses: FirebaseExtended/action-hosting-deploy@v0
