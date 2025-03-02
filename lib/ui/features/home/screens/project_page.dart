@@ -8,6 +8,7 @@ import 'package:onah_portfolio/ui/shared/widgets/bouncing_animation.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/spaced_row.dart';
 import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 List<Project> projectList = [
   Project(
@@ -17,6 +18,7 @@ List<Project> projectList = [
         " and track the entire delivery process. Cary currently operates in Cardiff, UK.",
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
+    iosLink: "https://apps.apple.com/us/app/cary-courier/id6738658174",
   ),
   Project(
     title: "I-Serv",
@@ -24,6 +26,8 @@ List<Project> projectList = [
         "and trusted local professionals for all your service needs. I-Serv is operational in Lagos, Nigeria",
     logoSvg: ImagePath.iservLogo,
     coverImage: ImagePath.iservImage1,
+    androidLink: "https://play.google.com/store/apps/details?id=com.iservehbg.iserve_flutter&hl=en",
+    iosLink: "https://apps.apple.com/us/app/i-serv-mobile/id6714478584",
   ),
   Project(
     title: "EvenFare",
@@ -39,6 +43,7 @@ List<Project> projectList = [
         "certain diseases in cassava plant leaves from an input image",
     logoSvg: ImagePath.lscanLogo,
     coverImage: ImagePath.lscanImage1,
+    githubLink: "https://github.com/cs-onah/cassava_disease_detection",
   ),
   Project(
     title: "Tramatch",
@@ -47,13 +52,16 @@ List<Project> projectList = [
         "faith-based beliefs.",
     logoSvg: ImagePath.tramatchLogo,
     coverImage: ImagePath.tramatchImage1,
+    androidLink: "https://play.google.com/store/apps/details?id=com.tramatch.tramatch&hl=en",
+    iosLink: "https://apps.apple.com/us/app/tramatch-dating-marriage/id6503286662",
   ),
   Project(
-    title: "FieldMaxPro",
+    title: "FieldMaxPro iOS",
     description:
         "FieldMaxPro is an enterprise fieldforce management system designed for Sales/Marketing Managers. The app allows managers track activities of their field representatives.",
     logoSvg: ImagePath.fieldmaxLogo,
     coverImage: ImagePath.fieldmaxImage1,
+    iosLink: "https://apps.apple.com/us/app/fieldmaxpro-retail/id6468567589",
   ),
 ];
 
@@ -260,6 +268,9 @@ class _ProjectCardState extends State<ProjectCard> {
             ),
             const SizedBox(height: 10),
             if (_isHovered && context.screenType.isDesktop) ...[
+              /// Show supported platforms
+              supportedPlatforms(),
+              const SizedBox(height: 15),
               projectActions(),
             ] else ...[
               Text(
@@ -269,8 +280,11 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
               const SizedBox(height: 10),
-              const SvgRenderWidget(svgPath: SvgPath.allPlatforms),
+              /// Show supported platforms
+              supportedPlatforms(),
             ],
+
+            /// Action buttons
             if (context.screenType.isMobile) ...[
               const SizedBox(height: 8),
               projectActions(),
@@ -281,47 +295,86 @@ class _ProjectCardState extends State<ProjectCard> {
     );
   }
 
+  Widget supportedPlatforms() {
+    return Builder(builder: (context) {
+      if (project.githubLink != null) {
+        return const SvgRenderWidget(svgPath: SvgPath.allPlatformsGithub);
+      }
+      if (project.androidLink != null && project.iosLink != null) {
+        return const SvgRenderWidget(svgPath: SvgPath.allPlatforms);
+      }
+      if (project.androidLink != null) {
+        return const SvgRenderWidget(
+          svgPath: SvgPath.allPlatformsWithoutApple,
+        );
+      }
+      if (project.iosLink != null) {
+        return const SvgRenderWidget(
+          svgPath: SvgPath.allPlatformsWithoutAndroid,
+        );
+      }
+      return const SvgRenderWidget(svgPath: SvgPath.allPlatforms);
+    });
+  }
+
   Widget projectActions() {
     final size =
         context.screenType.isMobile ? const Size(double.infinity, 48) : null;
     return SpacedRow(
       spacing: 10,
       children: [
-        Expanded(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(minimumSize: size),
-            child: const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SvgRenderWidget(svgPath: SvgPath.apple),
-                SizedBox(width: 10),
-                Text("App Store"),
-              ],
+        if (project.iosLink != null)
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(project.iosLink!)),
+              style: ElevatedButton.styleFrom(minimumSize: size),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgRenderWidget(svgPath: SvgPath.apple),
+                  SizedBox(width: 10),
+                  Text("App Store"),
+                ],
+              ),
             ),
           ),
-        ),
-        Expanded(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              side: BorderSide(color: context.colors.white),
-              minimumSize: size,
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const SvgRenderWidget(svgPath: SvgPath.playstore),
-                const SizedBox(width: 10),
-                Text(
-                  "PlayStore",
-                  style: TextStyle(color: context.colors.white),
-                ),
-              ],
+        if (project.androidLink != null)
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(project.androidLink!)),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.transparent,
+                side: BorderSide(color: context.colors.white),
+                minimumSize: size,
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SvgRenderWidget(svgPath: SvgPath.playstore),
+                  const SizedBox(width: 10),
+                  Text(
+                    "PlayStore",
+                    style: TextStyle(color: context.colors.white),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
+        if (project.githubLink != null)
+          Expanded(
+            child: ElevatedButton(
+              onPressed: () => launchUrl(Uri.parse(project.githubLink!)),
+              style: ElevatedButton.styleFrom(minimumSize: size),
+              child: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SvgRenderWidget(svgPath: SvgPath.apple),
+                  SizedBox(width: 10),
+                  Text("GitHub"),
+                ],
+              ),
+            ),
+          ),
       ],
     );
   }
