@@ -32,7 +32,7 @@ class AppElevatedButton extends StatelessWidget {
                 onPressed?.call();
               },
         style: style,
-        child: value ? CupertinoActivityIndicator(color: Colors.black) : child,
+        child: value ? const CupertinoActivityIndicator(color: Colors.black) : child,
       ),
     );
   }

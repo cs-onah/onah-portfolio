@@ -35,7 +35,7 @@ ThemeData buildDarkTheme(ScreenType type) {
       centerTitle: false,
       elevation: 0,
     ),
-    iconTheme: IconThemeData(color: AppColors.white),
+    iconTheme: const IconThemeData(color: AppColors.white),
     snackBarTheme: SnackBarThemeData(
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
