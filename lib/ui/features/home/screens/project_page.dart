@@ -12,28 +12,29 @@ import 'package:onah_portfolio/ui/shared/widgets/svg_render_widget.dart';
 List<Project> projectList = [
   Project(
     title: "Cary",
-    description: "Cary; A logistics application that allows users negotiate prices with movers,"
+    description:
+        "A logistics application that allows users negotiate prices with movers,"
         " and track the entire delivery process. Cary currently operates in Cardiff, UK.",
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
   ),
   Project(
     title: "I-Serv",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: "A structured marketplace that connects users with verified "
+        "and trusted local professionals for all your service needs. I-Serv is operational in Lagos, Nigeria",
     logoSvg: ImagePath.iservLogo,
     coverImage: ImagePath.iservImage1,
   ),
   Project(
     title: "EvenFare",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: "Eco-friendly courier service dedicated to reducing carbon "
+        "footprint while delivering your packages efficiently. EvenFare is set to launch in Lagos, Nigeria",
     logoSvg: ImagePath.evenfareLogo,
     coverImage: ImagePath.evenfareImage1,
   ),
   Project(
     title: "L-Scan",
-    description: " Passion project - exploring how to integrate Image "
+    description: "Passion project - exploring how to integrate Image "
         "Classification AI models into Flutter Apps. This app predicts "
         "certain diseases in cassava plant leaves from an input image",
     logoSvg: ImagePath.lscanLogo,
@@ -41,14 +42,16 @@ List<Project> projectList = [
   ),
   Project(
     title: "Tramatch",
-    description: "Design mobile-first, responsive apps that focus on delivering"
-        " a smooth, intuitive experience across multiple devices.",
+    description: "A premier traditional marriage matchmaking service catering "
+        "to individuals seeking a partner based on shared traditional values and "
+        "faith-based beliefs.",
     logoSvg: ImagePath.tramatchLogo,
     coverImage: ImagePath.tramatchImage1,
   ),
   Project(
     title: "FieldMaxPro",
-    description: "FieldMaxPro is an enterprise fieldforce management system designed for Sales/Marketing Managers. The app allows managers track activities of their field representatives.",
+    description:
+        "FieldMaxPro is an enterprise fieldforce management system designed for Sales/Marketing Managers. The app allows managers track activities of their field representatives.",
     logoSvg: ImagePath.fieldmaxLogo,
     coverImage: ImagePath.fieldmaxImage1,
   ),
