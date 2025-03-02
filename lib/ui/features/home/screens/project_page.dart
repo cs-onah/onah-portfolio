@@ -64,6 +64,17 @@ class ProjectPage extends StatefulWidget {
 class _ProjectPageState extends State<ProjectPage> {
   final controller = ScrollController();
 
+  double rightScrollLimit = 0;
+  double leftScrollLimit = 50;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      rightScrollLimit = controller.position.maxScrollExtent - 300;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final padding = context.screenType.isMobile
@@ -118,22 +129,21 @@ class _ProjectPageState extends State<ProjectPage> {
                 bottom: 0,
                 right: 0,
                 child: ListenableBuilder(
-                  listenable: controller,
-                  builder: (context, value) {
-                    if(controller.position.pixels > (controller.position.maxScrollExtent - 50)) {
-                      return const SizedBox.shrink();
-                    }
-                    return arrowButton(
-                      context,
-                      icon: Icons.arrow_forward,
-                      onTap: () => controller.animateTo(
-                        controller.position.maxScrollExtent,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.linear,
-                      ),
-                    );
-                  }
-                ),
+                    listenable: controller,
+                    builder: (context, value) {
+                      if (controller.position.pixels > rightScrollLimit) {
+                        return const SizedBox.shrink();
+                      }
+                      return arrowButton(
+                        context,
+                        icon: Icons.arrow_forward,
+                        onTap: () => controller.animateTo(
+                          controller.position.maxScrollExtent,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.linear,
+                        ),
+                      );
+                    }),
               ),
 
               /// Left arrow
@@ -144,7 +154,7 @@ class _ProjectPageState extends State<ProjectPage> {
                 child: ListenableBuilder(
                     listenable: controller,
                     builder: (context, value) {
-                      if(controller.position.pixels < 50) {
+                      if (controller.position.pixels < leftScrollLimit) {
                         return const SizedBox.shrink();
                       }
                       return arrowButton(
@@ -156,8 +166,7 @@ class _ProjectPageState extends State<ProjectPage> {
                           curve: Curves.linear,
                         ),
                       );
-                    }
-                ),
+                    }),
               )
             ],
           ),
