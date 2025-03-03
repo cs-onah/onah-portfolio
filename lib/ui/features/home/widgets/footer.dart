@@ -13,6 +13,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     if (context.screenType.isMobile) return const MobileFooter();
     return Container(
+      width: double.infinity,
       color: context.cardColor,
       child: LayoutConstraint(
         padding: const EdgeInsets.all(70),
