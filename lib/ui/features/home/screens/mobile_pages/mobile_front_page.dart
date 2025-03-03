@@ -4,6 +4,7 @@ import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/custom_app_bar.dart';
+import 'package:onah_portfolio/ui/features/home/widgets/social_widget.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/title_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
@@ -45,7 +46,9 @@ class MobileFrontPage extends StatelessWidget {
               style: context.textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 27),
+            const SizedBox(height: 30),
+            const Center(child: SocialWidget()),
+            const SizedBox(height: 30),
             ImageRenderWidget.asset(imagePath: ImagePath.avatar, width: 275),
             const SizedBox(width: 27),
             ElevatedButton(
