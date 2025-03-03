@@ -5,6 +5,7 @@ import 'package:onah_portfolio/ui/features/home/screens/mobile_pages/mobile_fron
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/arrow_text.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/custom_app_bar.dart';
+import 'package:onah_portfolio/ui/features/home/widgets/social_widget.dart';
 import 'package:onah_portfolio/ui/features/home/widgets/title_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/image_render_widget.dart';
 import 'package:onah_portfolio/ui/shared/widgets/layout_constraint.dart';
@@ -56,7 +57,9 @@ class FrontPage extends StatelessWidget {
                         "I create user-friendly interfaces for fast-growing startups.",
                         style: context.textTheme.bodyLarge,
                       ),
-                      const SizedBox(height: 27),
+                      const SizedBox(height: 20),
+                      const SocialWidget(),
+                      const SizedBox(height: 60),
                       ElevatedButton(
                         onPressed: () => goToPage(HeaderKey.formPage),
                         child: const ArrowText(child: Text("HIRE ME")),

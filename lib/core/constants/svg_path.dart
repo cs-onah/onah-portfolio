@@ -22,4 +22,9 @@ class SvgPath {
   static const snackWarning = "$basePath/snack_warning.svg";
   static const snackError = "$basePath/snack_error.svg";
   static const hamburger = "$basePath/hamburger.svg";
+  static const facebookMedia = "$basePath/facebook_media.svg";
+  static const instagramMedia = "$basePath/instagram_media.svg";
+  static const linkedinMedia = "$basePath/linkedin_media.svg";
+  static const tiktokMedia = "$basePath/tiktok_media.svg";
+  static const twitterMedia = "$basePath/twitter_media.svg";
 }
