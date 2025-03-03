@@ -19,30 +19,33 @@ class FormPage extends StatelessWidget {
   Widget build(BuildContext context) {
     if (context.screenType.isMobile) return const MobileFormPage();
 
-    return LayoutConstraint(
-      padding: const EdgeInsets.symmetric(horizontal: 80).copyWith(right: 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          SvgRenderWidget(
-            svgPath: SvgPath.formHeader,
-            key: HeaderKey.formPage,
-          ),
-          const SizedBox(height: 19),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              /// Form
-              const Expanded(child: FormWidget()),
-              const SizedBox(width: 80),
+    return SizedBox(
+      width: double.infinity,
+      child: LayoutConstraint(
+        padding: const EdgeInsets.symmetric(horizontal: 80).copyWith(right: 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 20),
+            SvgRenderWidget(
+              svgPath: SvgPath.formHeader,
+              key: HeaderKey.formPage,
+            ),
+            const SizedBox(height: 19),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// Form
+                const Expanded(child: FormWidget()),
+                const SizedBox(width: 80),
 
-              Flexible(
-                child: ImageRenderWidget.asset(imagePath: ImagePath.waveIllus),
-              ),
-            ],
-          )
-        ],
+                Flexible(
+                  child: ImageRenderWidget.asset(imagePath: ImagePath.waveIllus),
+                ),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

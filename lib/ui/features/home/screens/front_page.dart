@@ -26,6 +26,7 @@ class FrontPage extends StatelessWidget {
 
     return Container(
       height: context.height,
+      width: double.infinity,
       decoration: const BoxDecoration(
         image: DecorationImage(
           image: AssetImage(ImagePath.homeBg),
