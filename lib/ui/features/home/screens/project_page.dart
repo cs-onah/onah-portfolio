@@ -19,6 +19,7 @@ List<Project> projectList = [
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
     iosLink: "https://apps.apple.com/us/app/cary-mobile/id6738658124",
+    androidLink: "https://play.google.com/store/apps/details?id=com.cary.caryuser&pcampaignid=web_share",
   ),
   Project(
     title: "I-Serv",
