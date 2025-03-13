@@ -36,6 +36,7 @@ List<Project> projectList = [
         "footprint while delivering your packages efficiently. EvenFare is set to launch in Lagos, Nigeria",
     logoSvg: ImagePath.evenfareLogo,
     coverImage: ImagePath.evenfareImage1,
+    androidLink: "https://play.google.com/store/apps/details?id=com.evenfare.even_fare&hl=en"
   ),
   Project(
     title: "L-Scan",
