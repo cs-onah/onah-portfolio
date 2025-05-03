@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onah_portfolio/core/constants/globals.dart';
 import 'package:onah_portfolio/core/constants/image_paths.dart';
 import 'package:onah_portfolio/core/utils/context_extension.dart';
 import 'package:onah_portfolio/ui/features/home/utils/header_keys.dart';
@@ -33,6 +34,7 @@ class MobileFrontPage extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 39),
+
             /// App Bar
             const CustomAppBar(),
             const SizedBox(height: 46),
@@ -41,9 +43,10 @@ class MobileFrontPage extends StatelessWidget {
             const TitleWidget(),
             const SizedBox(height: 27),
             Text(
-              "Hi! I’m Ebuka, a Mobile Developer based in Nigeria. "
-                  "I create user-friendly interfaces for fast-growing startups.",
-              style: context.textTheme.bodyLarge,
+              tagLine,
+              style: context.textTheme.bodyLarge?.copyWith(
+                fontFamilyFallback: ['NotoColorEmoji'],
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 30),
@@ -55,7 +58,6 @@ class MobileFrontPage extends StatelessWidget {
               onPressed: () => goToPage(HeaderKey.formPage),
               child: const ArrowText(child: Text("HIRE ME")),
             ),
-
           ],
         ),
       ),

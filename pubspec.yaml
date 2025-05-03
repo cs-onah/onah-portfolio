@@ -68,3 +68,6 @@ flutter:
       fonts:
         - asset: assets/fonts/Aeonik-Regular.otf
           weight: 400
+    - family: NotoColorEmoji
+      fonts:
+        - asset: assets/fonts/NotoColorEmoji.ttf
