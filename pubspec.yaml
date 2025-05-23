@@ -21,12 +21,14 @@ dependencies:
   url_launcher: ^6.3.0
   http: ^0.13.3
   flutter_dotenv: ^5.2.1
+  firebase_analytics: ^11.4.6
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
   flutter_launcher_icons: "^0.12.0"
+  firebase_analytics_mocks: ^0.0.1
 
 flutter_icons:
   android: "launcher_icon" # flutter pub run flutter_launcher_icons
