@@ -63,7 +63,7 @@ class CustomAppBar extends StatelessWidget {
             ),
             child: const ArrowText(
               child: Text(
-                "HIRE ME",
+                "CONTACT ME",
                 style: TextStyle(
                   fontSize: 16,
                   fontFamily: AppFont.cormorantInfant,

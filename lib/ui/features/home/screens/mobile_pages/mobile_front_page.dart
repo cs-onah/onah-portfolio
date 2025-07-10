@@ -56,7 +56,7 @@ class MobileFrontPage extends StatelessWidget {
             const SizedBox(width: 27),
             ElevatedButton(
               onPressed: () => goToPage(HeaderKey.formPage),
-              child: const ArrowText(child: Text("HIRE ME")),
+              child: const ArrowText(child: Text("CONTACT ME")),
             ),
           ],
         ),
