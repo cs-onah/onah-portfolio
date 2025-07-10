@@ -82,7 +82,7 @@ class MobileDrawer extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size(double.infinity, 50),
               ),
-              child: const ArrowText(child: Text("HIRE ME")),
+              child: const ArrowText(child: Text("CONTACT ME")),
             ),
             const SizedBox(height: 20),
           ],

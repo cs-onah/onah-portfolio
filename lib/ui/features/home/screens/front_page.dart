@@ -64,7 +64,7 @@ class FrontPage extends StatelessWidget {
                       const SizedBox(height: 60),
                       ElevatedButton(
                         onPressed: () => goToPage(HeaderKey.formPage),
-                        child: const ArrowText(child: Text("HIRE ME")),
+                        child: const ArrowText(child: Text("CONTACT ME")),
                       )
                     ],
                   ),
