@@ -40,7 +40,6 @@
   <div id="loader-container">
     <style>
       body {
-        font-size: 16px;
         inset: 0;
         overflow: hidden;
         margin: 0;
@@ -67,23 +66,16 @@
         background-size: cover;
       }
 
-      .caption {
-        color: white;
-        font-family: "Georgia";
-      }
-
       .loader-icon {
-        width: 100px;
+        width: 10vh;
         animation: 1s ease-in-out 0s infinite alternate breathe;
         opacity: 1;
         transition: opacity .4s;
       }
-      @keyframes breathe { from { transform: scale(1) } to { transform: scale(0.95)}}
+      @keyframes breathe { from { transform: scale(1) } to { transform: scale(0.85)}}
     </style>
 
     <img src="./logo.png" alt="Loading indicator" class="loader-icon">
-    <div style="height: 30px;"></div>
-    <p class="caption">Just one sec, loading the good stuff 🔥... </p>
   </div>
 
   <script src="flutter_bootstrap.js" async></script>
