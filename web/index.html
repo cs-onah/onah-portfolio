@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Transforming ideas into delightful digital experiences.">
+  <meta name="description" content="Portfolio of cs-onah, a Senior Software Engineer specializing in App Development 📱. Explore projects, skills, and contact info. 🚀">
   <!-- web/index.html -->
   <meta name="keywords" content="Chukwuebuka Onah, csonah, Revelation jay, app developer, Flutter, mobile app, mobile engineer, software engineer, software company, coding, programming">
   <meta name="author" content="Chukwuebuka Sunday Onah">
@@ -35,7 +35,57 @@
   <title>Onah's Portfolio</title>
   <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
+  <div id="loader-container">
+    <style>
+      body {
+        font-size: 16px;
+        inset: 0;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+      }
+
+      #loader-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+
+         /* Layered gradients */
+         background-color: #090909;
+        background-image:
+          radial-gradient(circle at 30% 60%, rgba(0, 122, 215, 0.3), transparent 50%),
+          radial-gradient(circle at 80% 30%, rgba(0, 255, 0, 0.2), transparent 50%),
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 40px),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0px, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 40px);
+        background-blend-mode: screen;
+        background-size: cover;
+      }
+
+      .caption {
+        color: white;
+        font-family: "Georgia";
+      }
+
+      .loader-icon {
+        width: 100px;
+        animation: 1s ease-in-out 0s infinite alternate breathe;
+        opacity: 1;
+        transition: opacity .4s;
+      }
+      @keyframes breathe { from { transform: scale(1) } to { transform: scale(0.95)}}
+    </style>
+
+    <img src="./logo.png" alt="Loading indicator" class="loader-icon">
+    <div style="height: 30px;"></div>
+    <p class="caption">Just one sec, loading the good stuff 🔥... </p>
+  </div>
+
   <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
