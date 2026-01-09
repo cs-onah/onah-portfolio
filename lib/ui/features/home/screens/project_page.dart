@@ -12,6 +12,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 List<Project> projectList = [
   Project(
+    title: "Lingawa",
+    description:
+        "Learn Yoruba and Igbo with fun, immersive games and lessons for adults and kids (ages 5+). "
+        "Lingawa makes learning your mother tongue easy, fun, and deeply cultural.",
+    logoSvg: ImagePath.lingawaLogo,
+    coverImage: ImagePath.lingawaImage1,
+    iosLink: "https://apps.apple.com/us/app/lingawa/id6754772758",
+    androidLink:
+        "https://play.google.com/store/apps/details?id=com.lingawa.mobile",
+  ),
+  Project(
     title: "Cary",
     description:
         "A logistics application that allows users negotiate prices with movers,"
@@ -19,7 +30,8 @@ List<Project> projectList = [
     logoSvg: ImagePath.caryLogo,
     coverImage: ImagePath.caryImage1,
     iosLink: "https://apps.apple.com/us/app/cary-mobile/id6738658124",
-    androidLink: "https://play.google.com/store/apps/details?id=com.cary.caryuser&pcampaignid=web_share",
+    androidLink:
+        "https://play.google.com/store/apps/details?id=com.cary.caryuser&pcampaignid=web_share",
   ),
   Project(
     title: "I-Serv",
@@ -27,17 +39,18 @@ List<Project> projectList = [
         "and trusted local professionals for all your service needs. I-Serv is operational in Lagos, Nigeria",
     logoSvg: ImagePath.iservLogo,
     coverImage: ImagePath.iservImage1,
-    androidLink: "https://play.google.com/store/apps/details?id=com.iservehbg.iserve_flutter&hl=en",
+    androidLink:
+        "https://play.google.com/store/apps/details?id=com.iservehbg.iserve_flutter&hl=en",
     iosLink: "https://apps.apple.com/us/app/i-serv-mobile/id6714478584",
   ),
   Project(
-    title: "EvenFare",
-    description: "Eco-friendly courier service dedicated to reducing carbon "
-        "footprint while delivering your packages efficiently. EvenFare is set to launch in Lagos, Nigeria",
-    logoSvg: ImagePath.evenfareLogo,
-    coverImage: ImagePath.evenfareImage1,
-    androidLink: "https://play.google.com/store/apps/details?id=com.evenfare.even_fare&hl=en"
-  ),
+      title: "EvenFare",
+      description: "Eco-friendly courier service dedicated to reducing carbon "
+          "footprint while delivering your packages efficiently. EvenFare is set to launch in Lagos, Nigeria",
+      logoSvg: ImagePath.evenfareLogo,
+      coverImage: ImagePath.evenfareImage1,
+      androidLink:
+          "https://play.google.com/store/apps/details?id=com.evenfare.even_fare&hl=en"),
   Project(
     title: "L-Scan",
     description: "Passion project - exploring how to integrate Image "
@@ -54,8 +67,10 @@ List<Project> projectList = [
         "faith-based beliefs.",
     logoSvg: ImagePath.tramatchLogo,
     coverImage: ImagePath.tramatchImage1,
-    androidLink: "https://play.google.com/store/apps/details?id=com.tramatch.tramatch&hl=en",
-    iosLink: "https://apps.apple.com/us/app/tramatch-dating-marriage/id6503286662",
+    androidLink:
+        "https://play.google.com/store/apps/details?id=com.tramatch.tramatch&hl=en",
+    iosLink:
+        "https://apps.apple.com/us/app/tramatch-dating-marriage/id6503286662",
   ),
   Project(
     title: "FieldMaxPro iOS",
@@ -247,6 +262,7 @@ class _ProjectCardState extends State<ProjectCard> {
                     : DecorationImage(
                         image: AssetImage(project.coverImage!),
                         fit: BoxFit.cover,
+                        // alignment: Alignment.topCenter,
                       ),
               ),
             ),
@@ -256,7 +272,10 @@ class _ProjectCardState extends State<ProjectCard> {
                 if (project.logoSvg != null)
                   Padding(
                     padding: const EdgeInsets.only(right: 10.0),
-                    child: ImageRenderWidget.asset(imagePath: project.logoSvg!),
+                    child: ImageRenderWidget.asset(
+                      imagePath: project.logoSvg!,
+                      width: 25,
+                    ),
                   ),
                 Expanded(
                   child: Text(
@@ -282,6 +301,7 @@ class _ProjectCardState extends State<ProjectCard> {
                 ),
               ),
               const SizedBox(height: 10),
+
               /// Show supported platforms
               supportedPlatforms(),
             ],

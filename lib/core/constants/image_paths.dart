@@ -5,6 +5,8 @@ class ImagePath {
   static const avatar = "$basePath/avatar.png";
   static const caryLogo = "$basePath/cary_logo.png";
   static const caryImage1 = "$basePath/cary_image1.png";
+  static const lingawaLogo = "$basePath/lingawa_logo.png";
+  static const lingawaImage1 = "$basePath/lingawa_image1.png";
   static const iservLogo = "$basePath/iserv_logo.png";
   static const iservImage1 = "$basePath/iserv_image1.png";
   static const evenfareLogo = "$basePath/evenfare.png";
