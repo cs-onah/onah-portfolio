@@ -9,7 +9,6 @@ class SocialWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double spacing = 30.0;
-    double iconHeight = 30;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
